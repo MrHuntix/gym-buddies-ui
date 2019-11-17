@@ -2,6 +2,7 @@ package com.example.gym.buddies.ui.login;
 
 import android.app.Activity;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.StringRes;
 import android.support.v7.app.AlertDialog;
@@ -19,6 +20,8 @@ import android.widget.Toast;
 
 import com.example.gym.buddies.R;
 import com.example.gym.buddies.data.model.SignUpModel;
+import com.example.gym.buddies.ui.profile.ProfileActivity;
+import com.example.gym.buddies.utils.IntentUtil;
 
 import java.util.logging.Logger;
 
@@ -106,9 +109,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
-        String welcome = getString(R.string.welcome) + model.getDisplayName();
-        // TODO : initiate successful logged in experience
-        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+        Intent i = IntentUtil.getIntentForGymBuddies(this.getApplicationContext(), ProfileActivity.class);
+        startActivity(i);
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {

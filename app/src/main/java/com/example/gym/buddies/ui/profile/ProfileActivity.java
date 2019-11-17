@@ -17,6 +17,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
+import com.example.gym.buddies.R;
+
 public class ProfileActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
