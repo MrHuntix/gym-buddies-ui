@@ -1,16 +1,16 @@
-package com.example.gym.buddies.ui.profile.ui.slideshow;
+package com.example.gym.buddies.ui.profile.ui.chats;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class ChatViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public ChatViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("This is chat fragment");
     }
 
     public LiveData<String> getText() {

@@ -1,4 +1,4 @@
-package com.example.gym.buddies.ui.profile.ui.send;
+package com.example.gym.buddies.ui.profile.ui.gyms;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -13,17 +13,17 @@ import android.widget.TextView;
 
 import com.example.gym.buddies.R;
 
-public class SendFragment extends Fragment {
+public class GymsFragment extends Fragment {
 
-    private SendViewModel sendViewModel;
+    private GymsViewModel gymsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        sendViewModel =
-                ViewModelProviders.of(this).get(SendViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_send, container, false);
-        final TextView textView = root.findViewById(R.id.text_send);
-        sendViewModel.getText().observe(this, new Observer<String>() {
+        gymsViewModel =
+                ViewModelProviders.of(this).get(GymsViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_gyms, container, false);
+        final TextView textView = root.findViewById(R.id.text_home);
+        gymsViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

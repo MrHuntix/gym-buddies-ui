@@ -1,16 +1,16 @@
-package com.example.gym.buddies.ui.profile.ui.send;
+package com.example.gym.buddies.ui.profile.ui.gyms;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
-public class SendViewModel extends ViewModel {
+public class GymsViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SendViewModel() {
+    public GymsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is send fragment");
+        mText.setValue("This is gyms/home fragment");
     }
 
     public LiveData<String> getText() {
