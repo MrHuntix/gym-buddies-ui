@@ -1,8 +1,11 @@
 package com.example.gym.buddies.ui.profile;
 
+import android.content.ClipData;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.navigation.NavController;
@@ -16,8 +19,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.Button;
 
 import com.example.gym.buddies.R;
+import com.example.gym.buddies.ui.login.LoginActivity;
+import com.example.gym.buddies.utils.IntentUtil;
+import com.example.gym.buddies.utils.SessionManager;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -51,6 +58,24 @@ public class ProfileActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.profile, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_logout:
+                logout();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void logout() {
+        SessionManager.setLoggedIn(getApplicationContext(), false, SessionManager.getLoginResponseForLogout());
+        Intent intent = IntentUtil.getIntentForGymBuddies(getApplicationContext(), LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 
     @Override

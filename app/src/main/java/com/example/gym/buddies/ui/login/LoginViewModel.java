@@ -9,6 +9,7 @@ import com.example.gym.buddies.data.LoginRepository;
 import com.example.gym.buddies.data.Result;
 import com.example.gym.buddies.data.model.LoggedInUser;
 import com.example.gym.buddies.R;
+import com.example.gym.buddies.utils.SessionManager;
 
 public class LoginViewModel extends ViewModel {
 

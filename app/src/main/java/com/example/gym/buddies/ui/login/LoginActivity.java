@@ -19,11 +19,15 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.gym.buddies.R;
+import com.example.gym.buddies.data.PlaceHolder;
 import com.example.gym.buddies.data.model.SignUpModel;
 import com.example.gym.buddies.ui.profile.ProfileActivity;
 import com.example.gym.buddies.utils.IntentUtil;
+import com.example.gym.buddies.utils.SessionManager;
 
 import java.util.logging.Logger;
+
+import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK;
 
 public class LoginActivity extends AppCompatActivity {
     private static final Logger logger = Logger.getLogger("LoginActivity");
@@ -45,6 +49,11 @@ public class LoginActivity extends AppCompatActivity {
         final Button loginButton = findViewById(R.id.login);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
 
+        if(SessionManager.getLoggedStatus(getApplicationContext())) {
+            startActivity(IntentUtil.getIntentForGymBuddies(getApplicationContext(), ProfileActivity.class));
+        } else{
+
+        }
         signUpModel = new SignUpModel();
         loginViewModel.getLoginFormState().observe(this, loginFormState -> {
             logger.info("login form state: "+loginFormState);
@@ -69,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                 showLoginFailed(loginResult.getError());
             }
             if (loginResult.getSuccess() != null) {
-                updateUiWithUser(loginResult.getSuccess());
+                updateUiWithUser();
             }
             setResult(Activity.RESULT_OK);
         });
@@ -108,8 +117,10 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void updateUiWithUser(LoggedInUserView model) {
+    private void updateUiWithUser() {
+        SessionManager.setLoggedIn(getApplicationContext(), true, PlaceHolder.loginResponse);
         Intent i = IntentUtil.getIntentForGymBuddies(this.getApplicationContext(), ProfileActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i);
     }
 
