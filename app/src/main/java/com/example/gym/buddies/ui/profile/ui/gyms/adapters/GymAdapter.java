@@ -12,19 +12,20 @@ import android.view.animation.AnimationUtils;
 
 import com.example.gym.buddies.R;
 import com.example.gym.buddies.animations.Animations;
-import com.example.gym.buddies.data.model.Branches;
-import com.example.gym.buddies.data.model.Gyms;
-import com.example.gym.buddies.data.model.GymsResponse;
+import com.example.gym.buddies.data.model.operation.Branch;
+import com.example.gym.buddies.data.model.operation.Gym;
+import com.example.gym.buddies.data.model.operation.GymResponse;
 import com.example.gym.buddies.ui.profile.ui.gyms.view.GymViewHolder;
 
 import java.util.List;
 
 public class GymAdapter extends RecyclerView.Adapter<GymViewHolder> {
-    private GymsResponse gymsResponse;
+    private GymResponse gymsResponse;
     private Context context;
 
     private int lastPosition = -1;
-    public GymAdapter(GymsResponse gymsResponse, Context context) {
+
+    public GymAdapter(GymResponse gymsResponse, Context context) {
         this.gymsResponse = gymsResponse;
         this.context = context;
         Log.d("GymAdapter", "in GymAdapter");
@@ -39,16 +40,17 @@ public class GymAdapter extends RecyclerView.Adapter<GymViewHolder> {
         return new GymViewHolder(v);
     }
 
+    //@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
     public void onBindViewHolder(@NonNull GymViewHolder gymViewHolder, int i) {
-        Gyms gyms = gymsResponse.getGyms().get(i);
-        gymViewHolder.getGymName().setText(gyms.getName());
-        String time = gyms.getStartTime()+" to "+gyms.getEndTime();
-        gymViewHolder.getGymTime().setText(time);
-        String date = gyms.getStartDay()+" to "+gyms.getEndDay();
-        gymViewHolder.getGymDate().setText(date);
-        gymViewHolder.getBranches().setOnClickListener((view)->{
-            boolean show = toggleLayout(!gymsResponse.getGyms().get(i).isExpanded(), view, gymViewHolder.getRecyclerView(), gyms.getBranches());
+        Gym gyms = gymsResponse.getGyms().get(i);
+        Log.d("GymAdapter", "gym:" + gyms);
+        gymViewHolder.getName().setText(gyms.getName());
+        gymViewHolder.getWebsite().setText(gyms.getWebsite());
+        gymViewHolder.getBranches().setOnClickListener((view) -> {
+            //view.setTextDirection(3);
+            boolean show =
+                    toggleLayout(!gymsResponse.getGyms().get(i).isExpanded(), view, gymViewHolder.getRecyclerView(), gyms.getBranches(), Integer.valueOf(gyms.getId()));
             gymsResponse.getGyms().get(i).setExpanded(show);
         });
         animate(i, gymViewHolder);
@@ -56,11 +58,15 @@ public class GymAdapter extends RecyclerView.Adapter<GymViewHolder> {
 
     @Override
     public int getItemCount() {
+        if(gymsResponse == null || ( gymsResponse.getGyms() == null || gymsResponse.getGyms().size() == 0)) {
+            Log.d("GymAdapter", "0 gyms present");
+            return 0;
+        }
         return gymsResponse.getGyms().size();
     }
 
     private void animate(int i, GymViewHolder gymViewHolder) {
-        if(i > lastPosition){
+        if (i > lastPosition) {
             Animation animation = AnimationUtils.loadAnimation(context,
                     R.anim.up_from_bottom);
             gymViewHolder.itemView.startAnimation(animation);
@@ -69,10 +75,10 @@ public class GymAdapter extends RecyclerView.Adapter<GymViewHolder> {
         }
     }
 
-    private boolean toggleLayout(boolean isExpanded, View v, RecyclerView layoutExpand, List<Branches> branches) {
+    private boolean toggleLayout(boolean isExpanded, View v, RecyclerView layoutExpand, List<Branch> branches, int gymId) {
         Animations.toggleArrow(v, isExpanded);
         if (isExpanded) {
-            Animations.expand(layoutExpand, branches);
+            Animations.expand(layoutExpand, branches, context, gymId);
         } else {
             Animations.collapse(layoutExpand);
         }

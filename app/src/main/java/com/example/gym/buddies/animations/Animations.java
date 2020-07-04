@@ -1,5 +1,6 @@
 package com.example.gym.buddies.animations;
 
+import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -7,7 +8,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
-import com.example.gym.buddies.data.model.Branches;
+import com.example.gym.buddies.data.model.operation.Branch;
 import com.example.gym.buddies.ui.profile.ui.gyms.adapters.BranchAdapter;
 
 import java.util.List;
@@ -15,22 +16,22 @@ import java.util.List;
 public class Animations {
     public static boolean toggleArrow(View view, boolean isExpanded) {
         if (isExpanded) {
-            view.animate().setDuration(200).rotation(180);
+            view.animate().setDuration(200);
             return true;
         } else {
-            view.animate().setDuration(200).rotation(0);
+            view.animate().setDuration(200);
             return false;
         }
     }
 
-    public static void expand(RecyclerView view, List<Branches> branches) {
-        Animation animation = expandAction(view, branches);
+    public static void expand(RecyclerView view, List<Branch> branches, Context context, int gymId) {
+        Animation animation = expandAction(view, branches, context, gymId);
         view.startAnimation(animation);
     }
 
-    private static Animation expandAction(RecyclerView view, List<Branches> branches) {
+    private static Animation expandAction(RecyclerView view, List<Branch> branches, Context context, int gymId) {
         view.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        view.setAdapter(new BranchAdapter(branches));
+        view.setAdapter(new BranchAdapter(branches, context, gymId));
         view.measure(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         final int actualheight = view.getMeasuredHeight();
 

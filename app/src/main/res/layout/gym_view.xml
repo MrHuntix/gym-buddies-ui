@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
+        android:autoText="false"
         android:text="@string/list_branches" />
 
     <android.support.v7.widget.RecyclerView
@@ -24,18 +25,9 @@
         android:layout_height="match_parent"
         android:visibility="gone"
         android:layout_marginTop="150dp"/>
-    <TextView
-        android:id="@+id/card_gym_day"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="90dp"
-        android:text="@string/empty_string"
-        app:fontFamily="sans-serif-thin" />
 
     <TextView
-        android:id="@+id/card_gym_time"
+        android:id="@+id/card_gym_website"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"

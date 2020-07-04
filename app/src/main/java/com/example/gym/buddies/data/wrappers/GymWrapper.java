@@ -1,11 +1,11 @@
 package com.example.gym.buddies.data.wrappers;
 
-import com.example.gym.buddies.data.model.GymsResponse;
+import com.example.gym.buddies.data.model.operation.GymResponse;
 import com.google.gson.Gson;
 
 public class GymWrapper {
 
-    public static GymsResponse getGymResponseFromJson(String json) {
-        return new Gson().fromJson(json, GymsResponse.class);
+    public static GymResponse getGymResponseFromJson(String json) {
+        return new Gson().fromJson(json, GymResponse.class);
     }
 }

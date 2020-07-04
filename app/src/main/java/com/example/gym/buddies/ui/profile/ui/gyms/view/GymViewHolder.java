@@ -13,17 +13,15 @@ import lombok.Getter;
 
 @Getter
 public class GymViewHolder extends ParentViewHolder {
-    private TextView gymName;
-    private TextView gymTime;
-    private TextView gymDate;
+    private TextView name;
+    private TextView website;
     private Button branches;
     private RecyclerView recyclerView;
 
     public GymViewHolder(@NonNull View itemView) {
         super(itemView);
-        this.gymName = itemView.findViewById(R.id.card_gym_name);
-        this.gymDate = itemView.findViewById(R.id.card_gym_day);
-        this.gymTime = itemView.findViewById(R.id.card_gym_time);
+        this.name = itemView.findViewById(R.id.card_gym_name);
+        this.website = itemView.findViewById(R.id.card_gym_website);
         this.branches = itemView.findViewById(R.id.card_gym_list_branches);
         this.recyclerView = itemView.findViewById(R.id.branch_list);
     }

@@ -33,19 +33,26 @@
     <string name="menu_gyms">Gyms</string>
     <string name="menu_matches">Matches</string>
     <string name="menu_chats">Chats</string>
-    <string name="menu_browse">Browse</string>
     <string name="menu_share">Share</string>
-    <string name="menu_request">Request</string>
+    <string name="menu_request">Other</string>
 
     <string name="empty_string"> </string>
     <string name="list_branches">show branches</string>
 
-    <string name="address">Address</string>
-    <string name="landmark">Landmark</string>
     <string name="locality">Locality</string>
-    <string name="state">State</string>
-    <string name="pincode">Pincode</string>
-    <string name="contactPrimary">Primary</string>
-    <string name="contactSecondary">Secondary</string>
+    <string name="city">City</string>
+    <string name="contact">Contact</string>
     <string name="find_match">buddy up</string>
+    <string name="show_branch">show branch</string>
+    <string name="hide_branch">hide branch</string>
+    <string name="show_on_map">show on map</string>
+    <string name="message">send message</string>
+    <string name="view_profile">view profile</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="view_username">Username</string>
+    <string name="view_profile_title">SHOWING USER DETAILS</string>
+    <string name="view_profile_like">LIKE</string>
+    <string name="request_button_accept">ACCEPT</string>
+    <string name="request_button_reject">REJECT</string>
+
 </resources>

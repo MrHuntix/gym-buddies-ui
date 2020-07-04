@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/match_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    app:cardBackgroundColor="@color/main_background"
+    app:cardCornerRadius="5dp"
+    app:cardUseCompatPadding="true">
+
+    <TextView
+        android:id="@+id/match_gym_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Golds Gym"
+        android:textColor="@color/all_text_color"
+        android:textColorHighlight="@color/all_text_color"
+        android:textColorHint="@color/all_text_color"
+        android:layout_marginStart="5dp" />
+
+    <TextView
+        android:id="@+id/match_branch_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Babusapalya, Bangalore"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/all_text_color"
+        android:textColorHighlight="@color/all_text_color"
+        android:textColorHint="@color/all_text_color"
+        android:layout_marginStart="5dp" />
+
+    <Button
+        android:id="@+id/match_show_on_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:gravity="end"
+        android:text="@string/show_on_map"
+        android:textColor="@color/all_text_color"
+        android:textColorHighlight="@color/all_text_color"
+        android:textColorHint="@color/all_text_color"
+        android:layout_marginLeft="30dp" />
+
+    <Button
+        android:id="@+id/match_view_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="210dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:text="@string/view_profile"
+        android:textColor="@color/all_text_color"
+        android:textColorHighlight="@color/all_text_color"
+        android:textColorHint="@color/all_text_color"
+        android:layout_marginLeft="210dp" />
+</android.support.design.card.MaterialCardView>

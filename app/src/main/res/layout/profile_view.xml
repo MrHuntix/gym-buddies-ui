@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/branch_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    app:cardBackgroundColor="@color/main_background"
+    app:cardCornerRadius="5dp"
+    app:cardUseCompatPadding="true">
+
+    <TextView
+        android:id="@+id/match_username_pl"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/view_username"
+        android:textColor="@color/all_text_color"
+        android:textColorHighlight="@color/all_text_color"
+        android:textColorHint="@color/all_text_color" />
+
+    <TextView
+        android:id="@+id/popup_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/empty_string"
+        android:textColor="@color/all_text_color"
+        android:textColorHighlight="@color/all_text_color"
+        android:textColorLink="@color/all_text_color" />
+</android.support.v7.widget.CardView>

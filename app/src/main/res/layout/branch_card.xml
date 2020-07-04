@@ -11,108 +11,38 @@
     app:cardUseCompatPadding="true">
 
     <TextView
-        android:id="@+id/branch_address"
+        android:id="@+id/branch_locality"
         android:layout_width="65dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="30dp"
-        android:text="@string/address"
+        android:text="@string/locality"
         android:textColor="@color/all_text_color"
         android:textColorHighlight="@color/all_text_color"
         android:textColorHint="@color/all_text_color" />
 
     <TextView
-        android:id="@+id/branch_landmark"
+        android:id="@+id/branch_city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="60dp"
-        android:text="@string/landmark"
+        android:text="@string/city"
         android:textColor="@color/all_text_color"
         android:textColorHighlight="@color/all_text_color"
         android:textColorHint="@color/all_text_color"
         android:textColorLink="@color/all_text_color" />
 
     <TextView
-        android:id="@+id/branch_locality"
+        android:id="@+id/branch_contact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="90dp"
-        android:text="@string/locality"
+        android:text="@string/contact"
         android:textColor="@color/all_text_color"
         android:textColorHighlight="@color/all_text_color"
         android:textColorHint="@color/all_text_color"
-        android:textColorLink="@color/all_text_color" />
-
-    <TextView
-        android:id="@+id/branch_state"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="120dp"
-        android:text="@string/state"
-        android:textColor="@color/all_text_color"
-        android:textColorHighlight="@color/all_text_color"
-        android:textColorHint="@color/all_text_color"
-        android:textColorLink="@color/all_text_color" />
-
-    <TextView
-        android:id="@+id/branch_pincode"
-        android:layout_width="63dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="150dp"
-        android:text="@string/pincode"
-        android:textColor="@color/all_text_color"
-        android:textColorHighlight="@color/all_text_color"
-        android:textColorHint="@color/all_text_color"
-        android:textColorLink="@color/all_text_color" />
-
-    <TextView
-        android:id="@+id/branch_contactPrimary"
-        android:layout_width="65dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="180dp"
-        android:text="@string/contactPrimary"
-        android:textColor="@color/all_text_color"
-        android:textColorHighlight="@color/all_text_color"
-        android:textColorHint="@color/all_text_color"
-        android:textColorLink="@color/all_text_color" />
-
-    <TextView
-        android:id="@+id/branch_contactSecondary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="210dp"
-        android:text="@string/contactSecondary"
-        android:textColor="@color/all_text_color"
-        android:textColorHighlight="@color/all_text_color"
-        android:textColorHint="@color/all_text_color"
-        android:textColorLink="@color/all_text_color" />
-
-    <TextView
-        android:id="@+id/branch_value_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/empty_string"
-        android:textColor="@color/all_text_color"
-        android:textColorHighlight="@color/all_text_color"
-        android:textColorLink="@color/all_text_color" />
-
-    <TextView
-        android:id="@+id/branch_value_landmark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="60dp"
-        android:text="@string/empty_string"
-        android:textColor="@color/all_text_color"
-        android:textColorHighlight="@color/all_text_color"
         android:textColorLink="@color/all_text_color" />
 
     <TextView
@@ -120,61 +50,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="90dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/empty_string"
+        android:textColor="@color/all_text_color"
+        android:textColorHighlight="@color/all_text_color"
+        android:textColorLink="@color/all_text_color" />
+
+    <TextView
+        android:id="@+id/branch_value_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/empty_string"
+        android:textColor="@color/all_text_color"
+        android:textColorHighlight="@color/all_text_color"
+        android:textColorLink="@color/all_text_color" />
+
+    <TextView
+        android:id="@+id/branch_value_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="90dp"
         android:layout_marginTop="90dp"
         android:text="@string/empty_string"
         android:textColor="@color/all_text_color"
         android:textColorHighlight="@color/all_text_color"
         android:textColorLink="@color/all_text_color" />
 
-    <TextView
-        android:id="@+id/branch_value_state"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="120dp"
-        android:text="@string/empty_string"
-        android:textColor="@color/all_text_color"
-        android:textColorHighlight="@color/all_text_color"
-        android:textColorHint="@color/all_text_color"
-        android:textColorLink="@color/all_text_color" />
-
-    <TextView
-        android:id="@+id/branch_value_pincode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="150dp"
-        android:text="@string/empty_string" />
-
-    <TextView
-        android:id="@+id/branch_value_primary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="180dp"
-        android:text="@string/empty_string"
-        android:textColor="@color/all_text_color"
-        android:textColorHighlight="@color/all_text_color"
-        android:textColorHint="@color/all_text_color"
-        android:textColorLink="@color/all_text_color" />
-
-    <TextView
-        android:id="@+id/branch_value_secondary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="210dp"
-        android:text="@string/empty_string"
-        android:textColor="@color/all_text_color"
-        android:textColorHighlight="@color/all_text_color"
-        android:textColorHint="@color/all_text_color"
-        android:textColorLink="@color/all_text_color" />
-
     <Button
         android:id="@+id/find_match"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="115dp"
         android:gravity="center"
         android:text="@string/find_match" />
 </android.support.v7.widget.CardView>
