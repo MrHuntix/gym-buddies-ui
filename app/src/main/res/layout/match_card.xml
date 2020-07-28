@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/match_card_view"
     android:layout_width="match_parent"
@@ -62,4 +62,4 @@
         android:textColorHighlight="@color/all_text_color"
         android:textColorHint="@color/all_text_color"
         android:layout_marginLeft="210dp" />
-</com.google.android.material.card.MaterialCardView>
+</android.support.design.card.MaterialCardView>
