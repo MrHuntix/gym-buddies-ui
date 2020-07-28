@@ -12,34 +12,40 @@ import com.example.gym.buddies.data.model.match.MatchResponse;
 import com.example.gym.buddies.data.model.operation.Branch;
 import com.example.gym.buddies.data.model.operation.GymRegisterRequest;
 import com.example.gym.buddies.data.model.operation.GymResponse;
+import com.example.gym.buddies.data.protos.GymProto;
+import com.example.gym.buddies.data.protos.LoginSignupProto;
 
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface Gbuddies {
     @POST("/auth/signup/")
-    Call<UserSignupResponse> signup(@Body UserSignupRequest request);
+//    @Headers({"Content-Type:application/x-protobuf"})
+    Call<LoginSignupProto.SignupResponse> signup(@Body LoginSignupProto.SignupRequest request);
 
     @POST("/auth/login/")
-    Call<UserLoginResponse> login(@Body UserLoginRequest request);
+//    @Headers({"Content-Type:application/x-protobuf"})
+    Call<LoginSignupProto.LoginResponse> login(@Body LoginSignupProto.LoginRequest request);
 
     @GET("/auth/id/{id}/")
-    Call<User> getUserById(@Path("id") int id);
+//    @Headers({"Content-Type:application/x-protobuf"})
+    Call<LoginSignupProto.LoginResponse> getUserById(@Path("id") int id);
 
     @POST("/gym/fetch/")
-    Call<GymResponse> fetch();
+    Call<GymProto.FetchResponse> fetch();
 
     @POST("/gym/register/gym/")
-    Call<GymResponse> registerGym(@Body GymRegisterRequest gymRegisterRequest);
+    Call<GymProto.RegisterResponse> registerGym(@Body GymRegisterRequest gymRegisterRequest);
 
     @GET("/gym/coordinates/{branchId}/")
-    Call<Branch> coordinates(@Path("branchId") int branchId);
+    Call<GymProto.CoordinateResponse> coordinates(@Path("branchId") int branchId);
 
     @PUT("/match/buddy/requester/{requesterId}/gym/{gymId}/branch/{branchId}/")
     Call<MatchResponse> addForLookup(@Path("requesterId") int requesterId, @Path("gymId") int gymId, @Path("branchId") int branchId);
