@@ -1,10 +1,10 @@
 package com.example.gym.buddies.ui.profile.ui.gyms;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +14,7 @@ import com.example.gym.buddies.R;
 import com.example.gym.buddies.data.client.ApiFactory;
 import com.example.gym.buddies.data.client.Gbuddies;
 import com.example.gym.buddies.data.model.operation.GymResponse;
+import com.example.gym.buddies.data.protos.GymProto;
 import com.example.gym.buddies.ui.profile.ui.gyms.adapters.GymAdapter;
 import com.facebook.shimmer.ShimmerFrameLayout;
 
@@ -22,7 +23,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class GymsFragment extends Fragment {
-    private GymResponse gymResponse;
+    private GymProto.FetchResponse gymResponse;
     private ShimmerFrameLayout shimmerFrameLayout;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -38,20 +39,24 @@ public class GymsFragment extends Fragment {
 
     private void loadGyms(RecyclerView recyclerView) {
         Gbuddies gbuddies = ApiFactory.gbuddies.create(Gbuddies.class);
-        Call<GymResponse> response = gbuddies.fetch();
-        response.enqueue(new Callback<GymResponse>() {
+        Call<GymProto.FetchResponse> response = gbuddies.fetch();
+        Log.d("logTag", "sending fetch request");
+        response.enqueue(new Callback<GymProto.FetchResponse>() {
             @Override
-            public void onResponse(Call<GymResponse> call, Response<GymResponse> response) {
-                gymResponse = response.body();
-                shimmerFrameLayout.stopShimmer();
-                recyclerView.setVisibility(View.VISIBLE);
-                recyclerView
-                        .setAdapter(new GymAdapter(gymResponse, getContext()));
+            public void onResponse(Call<GymProto.FetchResponse> call, Response<GymProto.FetchResponse> response) {
+                if(response!=null && response.isSuccessful() && response.body()!=null) {
+                    gymResponse = response.body();
+                    shimmerFrameLayout.stopShimmer();
+                    recyclerView.setVisibility(View.VISIBLE);
+                    recyclerView
+                            .setAdapter(new GymAdapter(gymResponse, getContext()));
+                }
             }
 
             @Override
-            public void onFailure(Call<GymResponse> call, Throwable t) {
-                Log.d("aa", "onFailure: failure");
+            public void onFailure(Call<GymProto.FetchResponse> call, Throwable t) {
+                Log.d("aa", "failed to make fetch request");
+                t.printStackTrace();
             }
         });
     }
