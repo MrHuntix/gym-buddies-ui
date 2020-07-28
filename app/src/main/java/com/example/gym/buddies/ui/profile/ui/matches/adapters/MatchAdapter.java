@@ -2,9 +2,9 @@ package com.example.gym.buddies.ui.profile.ui.matches.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +19,8 @@ import com.example.gym.buddies.data.model.jwtgen.User;
 import com.example.gym.buddies.data.model.match.MatchLookup;
 import com.example.gym.buddies.data.model.match.MatchResponse;
 import com.example.gym.buddies.data.model.operation.Branch;
+import com.example.gym.buddies.data.protos.GymProto;
+import com.example.gym.buddies.data.protos.LoginSignupProto;
 import com.example.gym.buddies.ui.MapsActivity;
 import com.example.gym.buddies.ui.profile.ui.matches.view.MatchViewHolder;
 import com.example.gym.buddies.utils.SessionManager;
@@ -61,19 +63,19 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchViewHolder> {
         matchViewHolder.getShowProfile().setOnClickListener(v -> {
             Log.d("logTag", "showing profile of user id " + matchLookup.getRequesterId());
             Gbuddies gbuddies = ApiFactory.gbuddies.create(Gbuddies.class);
-            Call<User> response = gbuddies.getUserById(matchLookup.getRequesterId());
+            Call<LoginSignupProto.LoginResponse> response = gbuddies.getUserById(matchLookup.getRequesterId());
 
-            response.enqueue(new Callback<User>() {
+            response.enqueue(new Callback<LoginSignupProto.LoginResponse>() {
                 @Override
-                public void onResponse(Call<User> call, Response<User> response) {
-                    User user = response.body();
+                public void onResponse(Call<LoginSignupProto.LoginResponse> call, Response<LoginSignupProto.LoginResponse> response) {
+                    LoginSignupProto.LoginResponse user = response.body();
 //                    Log.d("logTag", user.toString());
 //                    String userName = user.getUserName();
 //                    Log.d("logTag", "user name" + userName);
                     createDialoge(user, matchLookup).show();
                 }
                 @Override
-                public void onFailure(Call<User> call, Throwable t) {
+                public void onFailure(Call<LoginSignupProto.LoginResponse> call, Throwable t) {
                     t.printStackTrace();
                     Log.d("logTag", "exception while fetching data for user: " + matchLookup.getRequesterId());
                 }
@@ -81,7 +83,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchViewHolder> {
         });
     }
 
-    private AlertDialog createDialoge(User user, MatchLookup matchLookup) {
+    private AlertDialog createDialoge(LoginSignupProto.LoginResponse user, MatchLookup matchLookup) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle(R.string.view_profile_title);
         LayoutInflater inflater = LayoutInflater.from(context);
@@ -119,20 +121,24 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchViewHolder> {
     private void showOnMap(int branchId) {
         Log.d("logTag", "showing location on map for banch id: " + branchId);
         Gbuddies gbuddies = ApiFactory.gbuddies.create(Gbuddies.class);
-        Call<Branch> response = gbuddies.coordinates(branchId);
-        response.enqueue(new Callback<Branch>() {
+        Call<GymProto.CoordinateResponse> response = gbuddies.coordinates(branchId);
+        Log.d("logTag", "sending request for getting cooridnates for branch " + branchId);
+        response.enqueue(new Callback<GymProto.CoordinateResponse>() {
             @Override
-            public void onResponse(Call<Branch> call, Response<Branch> response) {
-                Branch branch = response.body();
-                Intent intent = new Intent(context, MapsActivity.class);
-                intent.putExtra("latitude", branch.getLatitude());
-                intent.putExtra("longitude", branch.getLongitude());
-                context.startActivity(intent);
+            public void onResponse(Call<GymProto.CoordinateResponse> call, Response<GymProto.CoordinateResponse> response) {
+                if(response!=null && response.body()!=null && response.isSuccessful()) {
+                    GymProto.CoordinateResponse branch = response.body();
+                    Intent intent = new Intent(context, MapsActivity.class);
+                    intent.putExtra("latitude", branch.getLatitude());
+                    intent.putExtra("longitude", branch.getLongitude());
+                    context.startActivity(intent);
+                }
             }
 
             @Override
-            public void onFailure(Call<Branch> call, Throwable t) {
-
+            public void onFailure(Call<GymProto.CoordinateResponse> call, Throwable t) {
+                Log.d("logTag", "failed to fetch coordinates fo branch " + branchId);
+                t.printStackTrace();
             }
         });
     }

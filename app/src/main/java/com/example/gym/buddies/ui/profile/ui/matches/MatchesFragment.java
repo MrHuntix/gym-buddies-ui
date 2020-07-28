@@ -1,10 +1,10 @@
 package com.example.gym.buddies.ui.profile.ui.matches;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,10 +19,8 @@ import com.example.gym.buddies.ui.profile.ui.matches.adapters.MatchAdapter;
 import com.example.gym.buddies.utils.SessionManager;
 import com.facebook.shimmer.ShimmerFrameLayout;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import retrofit2.Call;
 import retrofit2.Callback;
