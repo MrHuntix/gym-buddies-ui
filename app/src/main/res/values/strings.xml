@@ -19,6 +19,9 @@
     <string name="enter_email">enter email id</string>
     <string name="enter_mobile_number">enter mobile number</string>
     <string name="enter_password">enter password</string>
+    <string name="enter_bio">enter bio</string>
+    <string name="camera_click">camera</string>
+    <string name="upload_click">upload</string>
     <string name="positive_button">SIGN UP</string>
     <string name="negative_button">CLOSE</string>
     <string name="title_activity_profile">ProfileActivity</string>
@@ -54,5 +57,6 @@
     <string name="view_profile_like">LIKE</string>
     <string name="request_button_accept">ACCEPT</string>
     <string name="request_button_reject">REJECT</string>
+    <string name="todo">TODO</string>
 
 </resources>
