@@ -12,6 +12,9 @@ import com.example.gym.buddies.data.model.match.MatchResponse;
 import com.example.gym.buddies.data.model.operation.Branch;
 import com.example.gym.buddies.data.model.operation.GymRegisterRequest;
 import com.example.gym.buddies.data.model.operation.GymResponse;
+import com.example.gym.buddies.data.protos.GymProto;
+import com.example.gym.buddies.data.protos.LoginSignupProto;
+import com.example.gym.buddies.data.protos.MatchLookupProto;
 
 import java.util.List;
 
@@ -24,38 +27,38 @@ import retrofit2.http.Path;
 
 public interface Gbuddies {
     @POST("/auth/signup/")
-    Call<UserSignupResponse> signup(@Body UserSignupRequest request);
+    Call<LoginSignupProto.SignupResponse> signup(@Body LoginSignupProto.SignupRequest request);
 
     @POST("/auth/login/")
-    Call<UserLoginResponse> login(@Body UserLoginRequest request);
+    Call<LoginSignupProto.LoginResponse> login(@Body LoginSignupProto.LoginRequest request);
 
     @GET("/auth/id/{id}/")
-    Call<User> getUserById(@Path("id") int id);
+    Call<LoginSignupProto.LoginResponse> getUserById(@Path("id") int id);
 
     @POST("/gym/fetch/")
-    Call<GymResponse> fetch();
+    Call<GymProto.FetchResponse> fetch();
 
     @POST("/gym/register/gym/")
-    Call<GymResponse> registerGym(@Body GymRegisterRequest gymRegisterRequest);
+    Call<GymProto.RegisterResponse> registerGym(@Body GymRegisterRequest gymRegisterRequest);
 
     @GET("/gym/coordinates/{branchId}/")
-    Call<Branch> coordinates(@Path("branchId") int branchId);
+    Call<GymProto.CoordinateResponse> coordinates(@Path("branchId") int branchId);
 
     @PUT("/match/buddy/requester/{requesterId}/gym/{gymId}/branch/{branchId}/")
-    Call<MatchResponse> addForLookup(@Path("requesterId") int requesterId, @Path("gymId") int gymId, @Path("branchId") int branchId);
+    Call<MatchLookupProto.MatchResponse> addForLookup(@Path("requesterId") int requesterId, @Path("gymId") int gymId, @Path("branchId") int branchId);
 
     @PUT("/match/like/{matchLookupId}/by/{userId}/")
-    Call<MatchResponse> like(@Path("matchLookupId") int matchLookupId, @Path("userId") int userId);
+    Call<MatchLookupProto.MatchResponse> like(@Path("matchLookupId") int matchLookupId, @Path("userId") int userId);
 
     @PUT("/match/dislike/{matchId}/")
-    Call<MatchResponse> unmatch(@Path("matchId") int matchId);
+    Call<MatchLookupProto.MatchResponse> unmatch(@Path("matchId") int matchId);
 
     @GET("/match/all/{requesterId}/gym/{gymId}/branch/{branchId}/")
-    Call<List<MatchLookup>> getSuitableMatches(@Path("requesterId") int requesterId, @Path("gymId") int gymId, @Path("branchId") int branchId);
+    Call<MatchLookupProto.MatchLookup> getSuitableMatches(@Path("requesterId") int requesterId, @Path("gymId") int gymId, @Path("branchId") int branchId);
 
     @GET("/match/derive/{requesterId}/")
-    Call<List<MatchLookup>> deriveMatches(@Path("requesterId") int requesterId);
+    Call<MatchLookupProto.MatchLookup> deriveMatches(@Path("requesterId") int requesterId);
 
     @GET("/match/matched/{requesterId}/")
-    Call<List<ChatResponse>> getMatched(@Path("requesterId") int requesterId);
+    Call<MatchLookupProto.MatchLookup> getMatched(@Path("requesterId") int requesterId);
 }
