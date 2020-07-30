@@ -2,19 +2,18 @@ package com.example.gym.buddies.ui.login;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.gym.buddies.R;
-import com.example.gym.buddies.data.PlaceHolder;
 import com.example.gym.buddies.data.client.ApiFactory;
 import com.example.gym.buddies.data.client.Gbuddies;
-import com.example.gym.buddies.data.client.JwtGen;
 import com.example.gym.buddies.data.model.jwtgen.UserLoginRequest;
 import com.example.gym.buddies.data.model.jwtgen.UserLoginResponse;
 import com.example.gym.buddies.data.model.jwtgen.UserSignupRequest;
@@ -23,7 +22,6 @@ import com.example.gym.buddies.ui.profile.ProfileActivity;
 import com.example.gym.buddies.utils.IntentUtil;
 import com.example.gym.buddies.utils.SessionManager;
 
-import java.io.IOException;
 import java.util.logging.Logger;
 
 import retrofit2.Call;

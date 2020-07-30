@@ -1,25 +1,22 @@
 package com.example.gym.buddies.ui.profile.ui.chats;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.gym.buddies.R;
 import com.example.gym.buddies.data.client.ApiFactory;
 import com.example.gym.buddies.data.client.Gbuddies;
 import com.example.gym.buddies.data.model.match.ChatResponse;
-import com.example.gym.buddies.data.model.match.Match;
-import com.example.gym.buddies.data.model.match.MatchLookup;
-import com.example.gym.buddies.data.model.match.MatchResponse;
 import com.example.gym.buddies.ui.profile.ui.chats.adapters.ChatAdapter;
-import com.example.gym.buddies.ui.profile.ui.matches.adapters.MatchAdapter;
 import com.example.gym.buddies.utils.SessionManager;
 import com.facebook.shimmer.ShimmerFrameLayout;
 

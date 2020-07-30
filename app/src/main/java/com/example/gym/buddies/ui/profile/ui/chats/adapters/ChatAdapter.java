@@ -1,21 +1,20 @@
 package com.example.gym.buddies.ui.profile.ui.chats.adapters;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.gym.buddies.R;
 import com.example.gym.buddies.data.client.ApiFactory;
 import com.example.gym.buddies.data.client.Gbuddies;
 import com.example.gym.buddies.data.model.match.ChatResponse;
-import com.example.gym.buddies.data.model.match.MatchResponse;
 import com.example.gym.buddies.ui.profile.ui.chats.view.ChatViewHolder;
-import com.example.gym.buddies.ui.profile.ui.matches.view.MatchViewHolder;
 
 import java.util.List;
 
