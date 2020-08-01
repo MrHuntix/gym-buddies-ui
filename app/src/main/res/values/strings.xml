@@ -54,5 +54,8 @@
     <string name="view_profile_like">LIKE</string>
     <string name="request_button_accept">ACCEPT</string>
     <string name="request_button_reject">REJECT</string>
-
+    <string name="enter_bio">enter bio</string>
+    <string name="camera_click">camera</string>
+    <string name="upload_click">upload</string>
+    <string name="todo">TODO</string>
 </resources>

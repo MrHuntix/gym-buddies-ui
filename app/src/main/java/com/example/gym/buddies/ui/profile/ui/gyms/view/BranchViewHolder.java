@@ -1,9 +1,11 @@
 package com.example.gym.buddies.ui.profile.ui.gyms.view;
 
-import android.support.annotation.NonNull;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 import com.bignerdranch.expandablerecyclerview.ViewHolder.ChildViewHolder;
 import com.example.gym.buddies.R;

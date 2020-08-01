@@ -15,7 +15,7 @@ public class Branch {
     private int gymId;
     private String locality;
     private String city;
-    private float latitude;
-    private float longitude;
+    private double latitude;
+    private double longitude;
     private String contact;
 }

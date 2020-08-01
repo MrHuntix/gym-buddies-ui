@@ -1,12 +1,13 @@
 package com.example.gym.buddies.animations;
 
 import android.content.Context;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gym.buddies.data.model.operation.Branch;
 import com.example.gym.buddies.ui.profile.ui.gyms.adapters.BranchAdapter;
