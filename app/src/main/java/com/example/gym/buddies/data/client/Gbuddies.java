@@ -54,11 +54,11 @@ public interface Gbuddies {
     Call<MatchLookupProto.MatchResponse> unmatch(@Path("matchId") int matchId);
 
     @GET("/match/all/{requesterId}/gym/{gymId}/branch/{branchId}/")
-    Call<MatchLookupProto.MatchLookup> getSuitableMatches(@Path("requesterId") int requesterId, @Path("gymId") int gymId, @Path("branchId") int branchId);
+    Call<MatchLookupProto.LookupResponse> getSuitableMatches(@Path("requesterId") int requesterId, @Path("gymId") int gymId, @Path("branchId") int branchId);
 
     @GET("/match/derive/{requesterId}/")
-    Call<MatchLookupProto.MatchLookup> deriveMatches(@Path("requesterId") int requesterId);
+    Call<MatchLookupProto.LookupResponse> deriveMatches(@Path("requesterId") int requesterId);
 
     @GET("/match/matched/{requesterId}/")
-    Call<MatchLookupProto.MatchLookup> getMatched(@Path("requesterId") int requesterId);
+    Call<MatchLookupProto.LookupResponse> getMatched(@Path("requesterId") int requesterId);
 }

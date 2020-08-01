@@ -20,6 +20,9 @@ import com.example.gym.buddies.data.model.jwtgen.User;
 import com.example.gym.buddies.data.model.match.MatchLookup;
 import com.example.gym.buddies.data.model.match.MatchResponse;
 import com.example.gym.buddies.data.model.operation.Branch;
+import com.example.gym.buddies.data.protos.GymProto;
+import com.example.gym.buddies.data.protos.LoginSignupProto;
+import com.example.gym.buddies.data.protos.MatchLookupProto;
 import com.example.gym.buddies.ui.MapsActivity;
 import com.example.gym.buddies.ui.profile.ui.matches.view.MatchViewHolder;
 import com.example.gym.buddies.utils.SessionManager;
@@ -33,13 +36,13 @@ import retrofit2.Response;
 public class MatchAdapter extends RecyclerView.Adapter<MatchViewHolder> {
 
     private Context context;
-    private List<MatchLookup> possibleMatches;
+    private List<MatchLookupProto.MatchLookup> derivedMatches;
     Gbuddies gbuddies;
 
-    public MatchAdapter(Context context, List<MatchLookup> possibleMatches) {
+    public MatchAdapter(Context context, List<MatchLookupProto.MatchLookup> derivedMatches) {
         this.context = context;
-        this.possibleMatches = possibleMatches;
-        Log.d("logTag", "found " + possibleMatches.size() + " possible matches");
+        this.derivedMatches = derivedMatches;
+        Log.d("logTag", "found " + derivedMatches.size() + " possible matches");
         gbuddies = ApiFactory.gbuddies.create(Gbuddies.class);
     }
 
@@ -53,36 +56,19 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MatchViewHolder matchViewHolder, int i) {
-        MatchLookup matchLookup = possibleMatches.get(i);
+        MatchLookupProto.MatchLookup matchLookup = derivedMatches.get(i);
         Log.d("logTag", "match: " + matchLookup);
-        matchViewHolder.getTitleGymName().setText("GymName " + matchLookup.getGymId());
-        matchViewHolder.getSubTitleBranchDetails().setText("branch: " + matchLookup.getBranchId());
-        matchViewHolder.getShowLocation().setOnClickListener(v -> showOnMap(matchLookup.getBranchId())
-        );
+        matchViewHolder.getTitleGymName().setText(matchLookup.getGym().getGymName());
+        matchViewHolder.getSubTitleBranchDetails().setText(matchLookup.getGym().getBranch().getLocality() + "-" + matchLookup.getGym().getBranch().getCity());
+        matchViewHolder.getShowLocation()
+                .setOnClickListener(v -> showOnMap(matchLookup.getGym().getBranch().getBranchId(), matchLookup.getGym().getBranch().getLatitude(), matchLookup.getGym().getBranch().getLongitude()));
         matchViewHolder.getShowProfile().setOnClickListener(v -> {
-            Log.d("logTag", "showing profile of user id " + matchLookup.getRequesterId());
-            Gbuddies gbuddies = ApiFactory.gbuddies.create(Gbuddies.class);
-            Call<User> response = gbuddies.getUserById(matchLookup.getRequesterId());
-
-            response.enqueue(new Callback<User>() {
-                @Override
-                public void onResponse(Call<User> call, Response<User> response) {
-                    User user = response.body();
-//                    Log.d("logTag", user.toString());
-//                    String userName = user.getUserName();
-//                    Log.d("logTag", "user name" + userName);
-                    createDialoge(user, matchLookup).show();
-                }
-                @Override
-                public void onFailure(Call<User> call, Throwable t) {
-                    t.printStackTrace();
-                    Log.d("logTag", "exception while fetching data for user: " + matchLookup.getRequesterId());
-                }
-            });
+            Log.d("logTag", "showing profile of user id " + matchLookup.getUser().getUserId());
+            createDialoge(matchLookup.getUser(), matchLookup).show();
         });
     }
 
-    private AlertDialog createDialoge(User user, MatchLookup matchLookup) {
+    private AlertDialog createDialoge(MatchLookupProto.User user, MatchLookupProto.MatchLookup matchLookup) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle(R.string.view_profile_title);
         LayoutInflater inflater = LayoutInflater.from(context);
@@ -92,22 +78,23 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchViewHolder> {
         builder.setView(profileView);
         builder.setPositiveButton(R.string.view_profile_like, (dialog, id) -> {
             Gbuddies factory = ApiFactory.gbuddies.create(Gbuddies.class);
-            Call<MatchResponse> response = factory.like(matchLookup.getId(), SessionManager.getUserId(context));
-            response.enqueue(new Callback<MatchResponse>() {
+            Call<MatchLookupProto.MatchResponse> response = factory.like(matchLookup.getId(), SessionManager.getUserId(context));
+            Log.d("logTag", "sending request for like");
+            response.enqueue(new Callback<MatchLookupProto.MatchResponse>() {
                 @Override
-                public void onResponse(Call<MatchResponse> call, Response<MatchResponse> response) {
-                    MatchResponse body = response.body();
-                    String responseMessage = body.getResponseMessage();
-                    Toast.makeText(context, responseMessage, Toast.LENGTH_LONG).show();
+                public void onResponse(Call<MatchLookupProto.MatchResponse> call, Response<MatchLookupProto.MatchResponse> response) {
+                    if(response!=null && response.body()!=null && response.isSuccessful()) {
+                        MatchLookupProto.MatchResponse body = response.body();
+                        Toast.makeText(context, body.getMessage(), Toast.LENGTH_LONG).show();
+                    }
                 }
 
                 @Override
-                public void onFailure(Call<MatchResponse> call, Throwable t) {
-
+                public void onFailure(Call<MatchLookupProto.MatchResponse> call, Throwable t) {
+                    Log.d("logTag", "failed to send like request");
+                    t.printStackTrace();
                 }
             });
-            Toast.makeText(context, "buddy requested", Toast.LENGTH_SHORT).show();
-
         });
 
         builder.setNegativeButton(R.string.negative_button, (dialog, id) -> {
@@ -117,30 +104,17 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchViewHolder> {
         return builder.create();
     }
 
-    private void showOnMap(int branchId) {
+    private void showOnMap(int branchId, double latitude, double longitude) {
         Log.d("logTag", "showing location on map for banch id: " + branchId);
-        Gbuddies gbuddies = ApiFactory.gbuddies.create(Gbuddies.class);
-        Call<Branch> response = gbuddies.coordinates(branchId);
-        response.enqueue(new Callback<Branch>() {
-            @Override
-            public void onResponse(Call<Branch> call, Response<Branch> response) {
-                Branch branch = response.body();
-                Intent intent = new Intent(context, MapsActivity.class);
-                intent.putExtra("latitude", branch.getLatitude());
-                intent.putExtra("longitude", branch.getLongitude());
-                context.startActivity(intent);
-            }
-
-            @Override
-            public void onFailure(Call<Branch> call, Throwable t) {
-
-            }
-        });
+        Intent intent = new Intent(context, MapsActivity.class);
+        intent.putExtra("latitude", latitude);
+        intent.putExtra("longitude", longitude);
+        context.startActivity(intent);
     }
 
     @Override
     public int getItemCount() {
-        Log.d("logTag", "item count: " + possibleMatches.size());
-        return possibleMatches.size();
+        Log.d("logTag", "item count: " + derivedMatches.size());
+        return derivedMatches.size();
     }
 }

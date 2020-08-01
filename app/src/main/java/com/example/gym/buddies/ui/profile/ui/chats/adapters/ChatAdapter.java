@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.gym.buddies.R;
 import com.example.gym.buddies.data.client.ApiFactory;
 import com.example.gym.buddies.data.client.Gbuddies;
-import com.example.gym.buddies.data.model.match.ChatResponse;
+import com.example.gym.buddies.data.protos.MatchLookupProto;
 import com.example.gym.buddies.ui.profile.ui.chats.view.ChatViewHolder;
 
 import java.util.List;
@@ -21,10 +21,10 @@ import java.util.List;
 public class ChatAdapter extends RecyclerView.Adapter<ChatViewHolder> {
 
     private Context context;
-    private List<ChatResponse> possibleMatches;
+    private List<MatchLookupProto.MatchLookup> possibleMatches;
     Gbuddies gbuddies;
 
-    public ChatAdapter(Context context, List<ChatResponse> possibleMatches) {
+    public ChatAdapter(Context context, List<MatchLookupProto.MatchLookup> possibleMatches) {
         this.context = context;
         this.possibleMatches = possibleMatches;
         Log.d("logTag", "found " + possibleMatches.size() + " possible matches");
@@ -41,9 +41,9 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ChatViewHolder chatViewHolder, int i) {
-        ChatResponse chatResponse = possibleMatches.get(i);
+        MatchLookupProto.MatchLookup chatResponse = possibleMatches.get(i);
         Log.d("logTag", "chat: " + chatResponse);
-        chatViewHolder.getGymDetails().setText(chatResponse.getGymName() + ", " + chatResponse.getBranch().getCity() + ", " + chatResponse.getBranch().getLocality());
+        chatViewHolder.getGymDetails().setText(chatResponse.getGym().getGymName() + ", " + chatResponse.getGym().getBranch().getCity() + ", " + chatResponse.getGym().getBranch().getLocality());
         chatViewHolder.getUserDetails().setText(chatResponse.getUser().getUserName());
         chatViewHolder.getMessageButton().setOnClickListener(v -> {
             Log.d("logTag", "sending message to user " + chatResponse.getUser().getUserName());

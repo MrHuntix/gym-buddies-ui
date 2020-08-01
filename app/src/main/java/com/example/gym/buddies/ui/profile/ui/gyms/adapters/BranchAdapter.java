@@ -15,6 +15,7 @@ import com.example.gym.buddies.data.client.ApiFactory;
 import com.example.gym.buddies.data.client.Gbuddies;
 import com.example.gym.buddies.data.model.match.MatchResponse;
 import com.example.gym.buddies.data.model.operation.Branch;
+import com.example.gym.buddies.data.protos.MatchLookupProto;
 import com.example.gym.buddies.ui.profile.ui.gyms.view.BranchViewHolder;
 import com.example.gym.buddies.utils.SessionManager;
 
@@ -53,20 +54,23 @@ public class BranchAdapter extends RecyclerView.Adapter<BranchViewHolder> {
         branchViewHolder.getBuddyUp().setOnClickListener(v->{
             Gbuddies matcher = ApiFactory.gbuddies.create(Gbuddies.class);
             Log.d("logTag", "adding to lookup by user " + SessionManager.getUserId(context)+" for gym id " + gymId + ", branch: " + Integer.valueOf(branch.getId()));
-            Toast.makeText(context, "added lookup. Check matches section in a few.", Toast.LENGTH_SHORT).show();
-            Call<MatchResponse> response = matcher.addForLookup(SessionManager.getUserId(context), gymId, Integer.valueOf(branch.getId()));
-            response.enqueue(new Callback<MatchResponse>() {
+            Call<MatchLookupProto.MatchResponse> response = matcher.addForLookup(SessionManager.getUserId(context), gymId, Integer.valueOf(branch.getId()));
+            Toast.makeText(context, "sent request for lookup", Toast.LENGTH_SHORT).show();
+            response.enqueue(new Callback<MatchLookupProto.MatchResponse>() {
                 @Override
-                public void onResponse(Call<MatchResponse> call, Response<MatchResponse> response) {
-                    MatchResponse message = response.body();
-                    Log.d("logTag", "response: " + message);
-                    Toast.makeText(context, message.getResponseMessage(), Toast.LENGTH_LONG).show();
+                public void onResponse(Call<MatchLookupProto.MatchResponse> call, Response<MatchLookupProto.MatchResponse> response) {
+                    if(response!=null && response.body()!=null && response.isSuccessful()) {
+                        MatchLookupProto.MatchResponse message = response.body();
+                        Log.d("logTag", "response: " + message);
+                        Toast.makeText(context, message.getMessage(), Toast.LENGTH_LONG).show();
+                    }
                 }
 
                 @Override
-                public void onFailure(Call<MatchResponse> call, Throwable t) {
+                public void onFailure(Call<MatchLookupProto.MatchResponse> call, Throwable t) {
+                    Log.d("logTag", "failed to send lookup request " + SessionManager.getUserId(context)+" for gym id " + gymId + ", branch: " + Integer.valueOf(branch.getId()));
                     Toast.makeText(context, "failed adding to lookup", Toast.LENGTH_SHORT).show();
-                    Log.d("logTag", "failed adding to lookup by user " + SessionManager.getUserId(context)+" for gym id " + gymId + ", branch: " + Integer.valueOf(branch.getId()));
+                    t.printStackTrace();
                 }
             });
         });
