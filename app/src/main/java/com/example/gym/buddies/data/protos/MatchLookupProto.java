@@ -3483,6 +3483,1088 @@ public final class MatchLookupProto {
     }
   }
 
+  public interface MatchOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:gbuddy.Match)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>int32 matchId = 1;</code>
+     * @return The matchId.
+     */
+    int getMatchId();
+
+    /**
+     * <code>int32 lookupId = 2;</code>
+     * @return The lookupId.
+     */
+    int getLookupId();
+
+    /**
+     * <code>.gbuddy.User user = 16;</code>
+     * @return Whether the user field is set.
+     */
+    boolean hasUser();
+    /**
+     * <code>.gbuddy.User user = 16;</code>
+     * @return The user.
+     */
+    User getUser();
+
+    /**
+     * <code>.gbuddy.Gym gym = 17;</code>
+     * @return Whether the gym field is set.
+     */
+    boolean hasGym();
+    /**
+     * <code>.gbuddy.Gym gym = 17;</code>
+     * @return The gym.
+     */
+    Gym getGym();
+  }
+  /**
+   * Protobuf type {@code gbuddy.Match}
+   */
+  public  static final class Match extends
+      com.google.protobuf.GeneratedMessageLite<
+          Match, Match.Builder> implements
+      // @@protoc_insertion_point(message_implements:gbuddy.Match)
+      MatchOrBuilder {
+    private Match() {
+    }
+    public static final int MATCHID_FIELD_NUMBER = 1;
+    private int matchId_;
+    /**
+     * <code>int32 matchId = 1;</code>
+     * @return The matchId.
+     */
+    @Override
+    public int getMatchId() {
+      return matchId_;
+    }
+    /**
+     * <code>int32 matchId = 1;</code>
+     * @param value The matchId to set.
+     */
+    private void setMatchId(int value) {
+      
+      matchId_ = value;
+    }
+    /**
+     * <code>int32 matchId = 1;</code>
+     */
+    private void clearMatchId() {
+      
+      matchId_ = 0;
+    }
+
+    public static final int LOOKUPID_FIELD_NUMBER = 2;
+    private int lookupId_;
+    /**
+     * <code>int32 lookupId = 2;</code>
+     * @return The lookupId.
+     */
+    @Override
+    public int getLookupId() {
+      return lookupId_;
+    }
+    /**
+     * <code>int32 lookupId = 2;</code>
+     * @param value The lookupId to set.
+     */
+    private void setLookupId(int value) {
+      
+      lookupId_ = value;
+    }
+    /**
+     * <code>int32 lookupId = 2;</code>
+     */
+    private void clearLookupId() {
+      
+      lookupId_ = 0;
+    }
+
+    public static final int USER_FIELD_NUMBER = 16;
+    private User user_;
+    /**
+     * <code>.gbuddy.User user = 16;</code>
+     */
+    @Override
+    public boolean hasUser() {
+      return user_ != null;
+    }
+    /**
+     * <code>.gbuddy.User user = 16;</code>
+     */
+    @Override
+    public User getUser() {
+      return user_ == null ? User.getDefaultInstance() : user_;
+    }
+    /**
+     * <code>.gbuddy.User user = 16;</code>
+     */
+    private void setUser(User value) {
+      value.getClass();
+  user_ = value;
+      
+      }
+    /**
+     * <code>.gbuddy.User user = 16;</code>
+     */
+    @SuppressWarnings({"ReferenceEquality"})
+    private void mergeUser(User value) {
+      value.getClass();
+  if (user_ != null &&
+          user_ != User.getDefaultInstance()) {
+        user_ =
+          User.newBuilder(user_).mergeFrom(value).buildPartial();
+      } else {
+        user_ = value;
+      }
+      
+    }
+    /**
+     * <code>.gbuddy.User user = 16;</code>
+     */
+    private void clearUser() {  user_ = null;
+      
+    }
+
+    public static final int GYM_FIELD_NUMBER = 17;
+    private Gym gym_;
+    /**
+     * <code>.gbuddy.Gym gym = 17;</code>
+     */
+    @Override
+    public boolean hasGym() {
+      return gym_ != null;
+    }
+    /**
+     * <code>.gbuddy.Gym gym = 17;</code>
+     */
+    @Override
+    public Gym getGym() {
+      return gym_ == null ? Gym.getDefaultInstance() : gym_;
+    }
+    /**
+     * <code>.gbuddy.Gym gym = 17;</code>
+     */
+    private void setGym(Gym value) {
+      value.getClass();
+  gym_ = value;
+      
+      }
+    /**
+     * <code>.gbuddy.Gym gym = 17;</code>
+     */
+    @SuppressWarnings({"ReferenceEquality"})
+    private void mergeGym(Gym value) {
+      value.getClass();
+  if (gym_ != null &&
+          gym_ != Gym.getDefaultInstance()) {
+        gym_ =
+          Gym.newBuilder(gym_).mergeFrom(value).buildPartial();
+      } else {
+        gym_ = value;
+      }
+      
+    }
+    /**
+     * <code>.gbuddy.Gym gym = 17;</code>
+     */
+    private void clearGym() {  gym_ = null;
+      
+    }
+
+    public static Match parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static Match parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static Match parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static Match parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static Match parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static Match parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static Match parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static Match parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static Match parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static Match parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static Match parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static Match parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return (Builder) DEFAULT_INSTANCE.createBuilder();
+    }
+    public static Builder newBuilder(Match prototype) {
+      return (Builder) DEFAULT_INSTANCE.createBuilder(prototype);
+    }
+
+    /**
+     * Protobuf type {@code gbuddy.Match}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          Match, Builder> implements
+        // @@protoc_insertion_point(builder_implements:gbuddy.Match)
+        MatchOrBuilder {
+      // Construct using com.example.gym.buddies.data.protos.MatchLookupProto.Match.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>int32 matchId = 1;</code>
+       * @return The matchId.
+       */
+      @Override
+      public int getMatchId() {
+        return instance.getMatchId();
+      }
+      /**
+       * <code>int32 matchId = 1;</code>
+       * @param value The matchId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMatchId(int value) {
+        copyOnWrite();
+        instance.setMatchId(value);
+        return this;
+      }
+      /**
+       * <code>int32 matchId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMatchId() {
+        copyOnWrite();
+        instance.clearMatchId();
+        return this;
+      }
+
+      /**
+       * <code>int32 lookupId = 2;</code>
+       * @return The lookupId.
+       */
+      @Override
+      public int getLookupId() {
+        return instance.getLookupId();
+      }
+      /**
+       * <code>int32 lookupId = 2;</code>
+       * @param value The lookupId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLookupId(int value) {
+        copyOnWrite();
+        instance.setLookupId(value);
+        return this;
+      }
+      /**
+       * <code>int32 lookupId = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLookupId() {
+        copyOnWrite();
+        instance.clearLookupId();
+        return this;
+      }
+
+      /**
+       * <code>.gbuddy.User user = 16;</code>
+       */
+      @Override
+      public boolean hasUser() {
+        return instance.hasUser();
+      }
+      /**
+       * <code>.gbuddy.User user = 16;</code>
+       */
+      @Override
+      public User getUser() {
+        return instance.getUser();
+      }
+      /**
+       * <code>.gbuddy.User user = 16;</code>
+       */
+      public Builder setUser(User value) {
+        copyOnWrite();
+        instance.setUser(value);
+        return this;
+        }
+      /**
+       * <code>.gbuddy.User user = 16;</code>
+       */
+      public Builder setUser(
+          User.Builder builderForValue) {
+        copyOnWrite();
+        instance.setUser(builderForValue.build());
+        return this;
+      }
+      /**
+       * <code>.gbuddy.User user = 16;</code>
+       */
+      public Builder mergeUser(User value) {
+        copyOnWrite();
+        instance.mergeUser(value);
+        return this;
+      }
+      /**
+       * <code>.gbuddy.User user = 16;</code>
+       */
+      public Builder clearUser() {  copyOnWrite();
+        instance.clearUser();
+        return this;
+      }
+
+      /**
+       * <code>.gbuddy.Gym gym = 17;</code>
+       */
+      @Override
+      public boolean hasGym() {
+        return instance.hasGym();
+      }
+      /**
+       * <code>.gbuddy.Gym gym = 17;</code>
+       */
+      @Override
+      public Gym getGym() {
+        return instance.getGym();
+      }
+      /**
+       * <code>.gbuddy.Gym gym = 17;</code>
+       */
+      public Builder setGym(Gym value) {
+        copyOnWrite();
+        instance.setGym(value);
+        return this;
+        }
+      /**
+       * <code>.gbuddy.Gym gym = 17;</code>
+       */
+      public Builder setGym(
+          Gym.Builder builderForValue) {
+        copyOnWrite();
+        instance.setGym(builderForValue.build());
+        return this;
+      }
+      /**
+       * <code>.gbuddy.Gym gym = 17;</code>
+       */
+      public Builder mergeGym(Gym value) {
+        copyOnWrite();
+        instance.mergeGym(value);
+        return this;
+      }
+      /**
+       * <code>.gbuddy.Gym gym = 17;</code>
+       */
+      public Builder clearGym() {  copyOnWrite();
+        instance.clearGym();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:gbuddy.Match)
+    }
+    @Override
+    @SuppressWarnings({"unchecked", "fallthrough"})
+    protected final Object dynamicMethod(
+        MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new Match();
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case BUILD_MESSAGE_INFO: {
+            Object[] objects = new Object[] {
+              "matchId_",
+              "lookupId_",
+              "user_",
+              "gym_",
+            };
+            String info =
+                "\u0000\u0004\u0000\u0000\u0001\u0011\u0004\u0000\u0000\u0000\u0001\u0004\u0002\u0004" +
+                "\u0010\t\u0011\t";
+            return newMessageInfo(DEFAULT_INSTANCE, info, objects);
+        }
+        // fall through
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          com.google.protobuf.Parser<Match> parser = PARSER;
+          if (parser == null) {
+            synchronized (Match.class) {
+              parser = PARSER;
+              if (parser == null) {
+                parser =
+                    new DefaultInstanceBasedParser<Match>(
+                        DEFAULT_INSTANCE);
+                PARSER = parser;
+              }
+            }
+          }
+          return parser;
+      }
+      case GET_MEMOIZED_IS_INITIALIZED: {
+        return (byte) 1;
+      }
+      case SET_MEMOIZED_IS_INITIALIZED: {
+        return null;
+      }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:gbuddy.Match)
+    private static final Match DEFAULT_INSTANCE;
+    static {
+      Match defaultInstance = new Match();
+      // New instances are implicitly immutable so no need to make
+      // immutable.
+      DEFAULT_INSTANCE = defaultInstance;
+      com.google.protobuf.GeneratedMessageLite.registerDefaultInstance(
+        Match.class, defaultInstance);
+    }
+
+    public static Match getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<Match> PARSER;
+
+    public static com.google.protobuf.Parser<Match> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface ChatResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:gbuddy.ChatResponse)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>int32 responseCode = 1;</code>
+     * @return The responseCode.
+     */
+    int getResponseCode();
+
+    /**
+     * <code>string message = 2;</code>
+     * @return The message.
+     */
+    String getMessage();
+    /**
+     * <code>string message = 2;</code>
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+
+    /**
+     * <code>repeated .gbuddy.Match matches = 17;</code>
+     */
+    java.util.List<Match>
+        getMatchesList();
+    /**
+     * <code>repeated .gbuddy.Match matches = 17;</code>
+     */
+    Match getMatches(int index);
+    /**
+     * <code>repeated .gbuddy.Match matches = 17;</code>
+     */
+    int getMatchesCount();
+  }
+  /**
+   * Protobuf type {@code gbuddy.ChatResponse}
+   */
+  public  static final class ChatResponse extends
+      com.google.protobuf.GeneratedMessageLite<
+          ChatResponse, ChatResponse.Builder> implements
+      // @@protoc_insertion_point(message_implements:gbuddy.ChatResponse)
+      ChatResponseOrBuilder {
+    private ChatResponse() {
+      message_ = "";
+      matches_ = emptyProtobufList();
+    }
+    public static final int RESPONSECODE_FIELD_NUMBER = 1;
+    private int responseCode_;
+    /**
+     * <code>int32 responseCode = 1;</code>
+     * @return The responseCode.
+     */
+    @Override
+    public int getResponseCode() {
+      return responseCode_;
+    }
+    /**
+     * <code>int32 responseCode = 1;</code>
+     * @param value The responseCode to set.
+     */
+    private void setResponseCode(int value) {
+      
+      responseCode_ = value;
+    }
+    /**
+     * <code>int32 responseCode = 1;</code>
+     */
+    private void clearResponseCode() {
+      
+      responseCode_ = 0;
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 2;
+    private String message_;
+    /**
+     * <code>string message = 2;</code>
+     * @return The message.
+     */
+    @Override
+    public String getMessage() {
+      return message_;
+    }
+    /**
+     * <code>string message = 2;</code>
+     * @return The bytes for message.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(message_);
+    }
+    /**
+     * <code>string message = 2;</code>
+     * @param value The message to set.
+     */
+    private void setMessage(
+        String value) {
+      value.getClass();
+  
+      message_ = value;
+    }
+    /**
+     * <code>string message = 2;</code>
+     */
+    private void clearMessage() {
+      
+      message_ = getDefaultInstance().getMessage();
+    }
+    /**
+     * <code>string message = 2;</code>
+     * @param value The bytes for message to set.
+     */
+    private void setMessageBytes(
+        com.google.protobuf.ByteString value) {
+      checkByteStringIsUtf8(value);
+      message_ = value.toStringUtf8();
+      
+    }
+
+    public static final int MATCHES_FIELD_NUMBER = 17;
+    private com.google.protobuf.Internal.ProtobufList<Match> matches_;
+    /**
+     * <code>repeated .gbuddy.Match matches = 17;</code>
+     */
+    @Override
+    public java.util.List<Match> getMatchesList() {
+      return matches_;
+    }
+    /**
+     * <code>repeated .gbuddy.Match matches = 17;</code>
+     */
+    public java.util.List<? extends MatchOrBuilder>
+        getMatchesOrBuilderList() {
+      return matches_;
+    }
+    /**
+     * <code>repeated .gbuddy.Match matches = 17;</code>
+     */
+    @Override
+    public int getMatchesCount() {
+      return matches_.size();
+    }
+    /**
+     * <code>repeated .gbuddy.Match matches = 17;</code>
+     */
+    @Override
+    public Match getMatches(int index) {
+      return matches_.get(index);
+    }
+    /**
+     * <code>repeated .gbuddy.Match matches = 17;</code>
+     */
+    public MatchOrBuilder getMatchesOrBuilder(
+        int index) {
+      return matches_.get(index);
+    }
+    private void ensureMatchesIsMutable() {
+      com.google.protobuf.Internal.ProtobufList<Match> tmp = matches_;
+      if (!tmp.isModifiable()) {
+        matches_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(tmp);
+       }
+    }
+
+    /**
+     * <code>repeated .gbuddy.Match matches = 17;</code>
+     */
+    private void setMatches(
+        int index, Match value) {
+      value.getClass();
+  ensureMatchesIsMutable();
+      matches_.set(index, value);
+    }
+    /**
+     * <code>repeated .gbuddy.Match matches = 17;</code>
+     */
+    private void addMatches(Match value) {
+      value.getClass();
+  ensureMatchesIsMutable();
+      matches_.add(value);
+    }
+    /**
+     * <code>repeated .gbuddy.Match matches = 17;</code>
+     */
+    private void addMatches(
+        int index, Match value) {
+      value.getClass();
+  ensureMatchesIsMutable();
+      matches_.add(index, value);
+    }
+    /**
+     * <code>repeated .gbuddy.Match matches = 17;</code>
+     */
+    private void addAllMatches(
+        Iterable<? extends Match> values) {
+      ensureMatchesIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, matches_);
+    }
+    /**
+     * <code>repeated .gbuddy.Match matches = 17;</code>
+     */
+    private void clearMatches() {
+      matches_ = emptyProtobufList();
+    }
+    /**
+     * <code>repeated .gbuddy.Match matches = 17;</code>
+     */
+    private void removeMatches(int index) {
+      ensureMatchesIsMutable();
+      matches_.remove(index);
+    }
+
+    public static ChatResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static ChatResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static ChatResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static ChatResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static ChatResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static ChatResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static ChatResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static ChatResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static ChatResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static ChatResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static ChatResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static ChatResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return (Builder) DEFAULT_INSTANCE.createBuilder();
+    }
+    public static Builder newBuilder(ChatResponse prototype) {
+      return (Builder) DEFAULT_INSTANCE.createBuilder(prototype);
+    }
+
+    /**
+     * Protobuf type {@code gbuddy.ChatResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          ChatResponse, Builder> implements
+        // @@protoc_insertion_point(builder_implements:gbuddy.ChatResponse)
+        ChatResponseOrBuilder {
+      // Construct using com.example.gym.buddies.data.protos.MatchLookupProto.ChatResponse.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>int32 responseCode = 1;</code>
+       * @return The responseCode.
+       */
+      @Override
+      public int getResponseCode() {
+        return instance.getResponseCode();
+      }
+      /**
+       * <code>int32 responseCode = 1;</code>
+       * @param value The responseCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResponseCode(int value) {
+        copyOnWrite();
+        instance.setResponseCode(value);
+        return this;
+      }
+      /**
+       * <code>int32 responseCode = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearResponseCode() {
+        copyOnWrite();
+        instance.clearResponseCode();
+        return this;
+      }
+
+      /**
+       * <code>string message = 2;</code>
+       * @return The message.
+       */
+      @Override
+      public String getMessage() {
+        return instance.getMessage();
+      }
+      /**
+       * <code>string message = 2;</code>
+       * @return The bytes for message.
+       */
+      @Override
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        return instance.getMessageBytes();
+      }
+      /**
+       * <code>string message = 2;</code>
+       * @param value The message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessage(
+          String value) {
+        copyOnWrite();
+        instance.setMessage(value);
+        return this;
+      }
+      /**
+       * <code>string message = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMessage() {
+        copyOnWrite();
+        instance.clearMessage();
+        return this;
+      }
+      /**
+       * <code>string message = 2;</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setMessageBytes(value);
+        return this;
+      }
+
+      /**
+       * <code>repeated .gbuddy.Match matches = 17;</code>
+       */
+      @Override
+      public java.util.List<Match> getMatchesList() {
+        return java.util.Collections.unmodifiableList(
+            instance.getMatchesList());
+      }
+      /**
+       * <code>repeated .gbuddy.Match matches = 17;</code>
+       */
+      @Override
+      public int getMatchesCount() {
+        return instance.getMatchesCount();
+      }/**
+       * <code>repeated .gbuddy.Match matches = 17;</code>
+       */
+      @Override
+      public Match getMatches(int index) {
+        return instance.getMatches(index);
+      }
+      /**
+       * <code>repeated .gbuddy.Match matches = 17;</code>
+       */
+      public Builder setMatches(
+          int index, Match value) {
+        copyOnWrite();
+        instance.setMatches(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated .gbuddy.Match matches = 17;</code>
+       */
+      public Builder setMatches(
+          int index, Match.Builder builderForValue) {
+        copyOnWrite();
+        instance.setMatches(index,
+            builderForValue.build());
+        return this;
+      }
+      /**
+       * <code>repeated .gbuddy.Match matches = 17;</code>
+       */
+      public Builder addMatches(Match value) {
+        copyOnWrite();
+        instance.addMatches(value);
+        return this;
+      }
+      /**
+       * <code>repeated .gbuddy.Match matches = 17;</code>
+       */
+      public Builder addMatches(
+          int index, Match value) {
+        copyOnWrite();
+        instance.addMatches(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated .gbuddy.Match matches = 17;</code>
+       */
+      public Builder addMatches(
+          Match.Builder builderForValue) {
+        copyOnWrite();
+        instance.addMatches(builderForValue.build());
+        return this;
+      }
+      /**
+       * <code>repeated .gbuddy.Match matches = 17;</code>
+       */
+      public Builder addMatches(
+          int index, Match.Builder builderForValue) {
+        copyOnWrite();
+        instance.addMatches(index,
+            builderForValue.build());
+        return this;
+      }
+      /**
+       * <code>repeated .gbuddy.Match matches = 17;</code>
+       */
+      public Builder addAllMatches(
+          Iterable<? extends Match> values) {
+        copyOnWrite();
+        instance.addAllMatches(values);
+        return this;
+      }
+      /**
+       * <code>repeated .gbuddy.Match matches = 17;</code>
+       */
+      public Builder clearMatches() {
+        copyOnWrite();
+        instance.clearMatches();
+        return this;
+      }
+      /**
+       * <code>repeated .gbuddy.Match matches = 17;</code>
+       */
+      public Builder removeMatches(int index) {
+        copyOnWrite();
+        instance.removeMatches(index);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:gbuddy.ChatResponse)
+    }
+    @Override
+    @SuppressWarnings({"unchecked", "fallthrough"})
+    protected final Object dynamicMethod(
+        MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new ChatResponse();
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case BUILD_MESSAGE_INFO: {
+            Object[] objects = new Object[] {
+              "responseCode_",
+              "message_",
+              "matches_",
+              Match.class,
+            };
+            String info =
+                "\u0000\u0003\u0000\u0000\u0001\u0011\u0003\u0000\u0001\u0000\u0001\u0004\u0002\u0208" +
+                "\u0011\u001b";
+            return newMessageInfo(DEFAULT_INSTANCE, info, objects);
+        }
+        // fall through
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          com.google.protobuf.Parser<ChatResponse> parser = PARSER;
+          if (parser == null) {
+            synchronized (ChatResponse.class) {
+              parser = PARSER;
+              if (parser == null) {
+                parser =
+                    new DefaultInstanceBasedParser<ChatResponse>(
+                        DEFAULT_INSTANCE);
+                PARSER = parser;
+              }
+            }
+          }
+          return parser;
+      }
+      case GET_MEMOIZED_IS_INITIALIZED: {
+        return (byte) 1;
+      }
+      case SET_MEMOIZED_IS_INITIALIZED: {
+        return null;
+      }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:gbuddy.ChatResponse)
+    private static final ChatResponse DEFAULT_INSTANCE;
+    static {
+      ChatResponse defaultInstance = new ChatResponse();
+      // New instances are implicitly immutable so no need to make
+      // immutable.
+      DEFAULT_INSTANCE = defaultInstance;
+      com.google.protobuf.GeneratedMessageLite.registerDefaultInstance(
+        ChatResponse.class, defaultInstance);
+    }
+
+    public static ChatResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<ChatResponse> PARSER;
+
+    public static com.google.protobuf.Parser<ChatResponse> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
 
   static {
   }
