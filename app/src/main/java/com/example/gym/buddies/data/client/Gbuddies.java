@@ -60,5 +60,5 @@ public interface Gbuddies {
     Call<MatchLookupProto.LookupResponse> deriveMatches(@Path("requesterId") int requesterId);
 
     @GET("/match/matched/{requesterId}/")
-    Call<MatchLookupProto.LookupResponse> getMatched(@Path("requesterId") int requesterId);
+    Call<MatchLookupProto.ChatResponse> getMatched(@Path("requesterId") int requesterId);
 }

@@ -58,4 +58,5 @@
     <string name="camera_click">camera</string>
     <string name="upload_click">upload</string>
     <string name="todo">TODO</string>
+    <string name="message_body">hi %s, we matched through the app. Let\'s talk and proceed with our workout routine.</string>
 </resources>

@@ -49,13 +49,14 @@ public class ChatFragment extends Fragment {
     private void loadMatches(RecyclerView recyclerView) {
         Log.d("logTag", "deriving matches");
         Gbuddies gbuddies = ApiFactory.gbuddies.create(Gbuddies.class);
-        Call<MatchLookupProto.LookupResponse> response = gbuddies.getMatched(userId);
+        Log.d("logTag", "sending request to get matches for chat");
+        Call<MatchLookupProto.ChatResponse> response = gbuddies.getMatched(userId);
 
-        response.enqueue(new Callback<MatchLookupProto.LookupResponse>() {
+        response.enqueue(new Callback<MatchLookupProto.ChatResponse>() {
             @Override
-            public void onResponse(Call<MatchLookupProto.LookupResponse> call, Response<MatchLookupProto.LookupResponse> response) {
+            public void onResponse(Call<MatchLookupProto.ChatResponse> call, Response<MatchLookupProto.ChatResponse> response) {
                 if(response!=null && response.body()!=null && response.isSuccessful()) {
-                    List<MatchLookupProto.MatchLookup> derivedMatches = response.body().getLookupsList();
+                    List<MatchLookupProto.Match> derivedMatches = response.body().getMatchesList();
                     if (!CollectionUtils.isEmpty(derivedMatches)) {
                         Log.d("logTag", "derived " + derivedMatches.size() + " for userId: " + userId);
                         shimmerFrameLayout.stopShimmer();
@@ -72,8 +73,8 @@ public class ChatFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<MatchLookupProto.LookupResponse> call, Throwable t) {
-                Log.d("logTag", "failed to make chat request");
+            public void onFailure(Call<MatchLookupProto.ChatResponse> call, Throwable t) {
+                Log.d("logTag", "failed to make chat request with following exception");
                 t.printStackTrace();
             }
         });

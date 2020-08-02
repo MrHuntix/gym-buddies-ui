@@ -15,19 +15,20 @@ import com.example.gym.buddies.data.client.ApiFactory;
 import com.example.gym.buddies.data.client.Gbuddies;
 import com.example.gym.buddies.data.protos.MatchLookupProto;
 import com.example.gym.buddies.ui.profile.ui.chats.view.ChatViewHolder;
+import com.example.gym.buddies.utils.IntentUtil;
 
 import java.util.List;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatViewHolder> {
 
     private Context context;
-    private List<MatchLookupProto.MatchLookup> possibleMatches;
+    private List<MatchLookupProto.Match> derivedMatches;
     Gbuddies gbuddies;
 
-    public ChatAdapter(Context context, List<MatchLookupProto.MatchLookup> possibleMatches) {
+    public ChatAdapter(Context context, List<MatchLookupProto.Match> derivedMatches) {
         this.context = context;
-        this.possibleMatches = possibleMatches;
-        Log.d("logTag", "found " + possibleMatches.size() + " possible matches");
+        this.derivedMatches = derivedMatches;
+        Log.d("logTag", "found " + derivedMatches.size() + " possible matches");
         gbuddies = ApiFactory.gbuddies.create(Gbuddies.class);
     }
 
@@ -41,19 +42,21 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ChatViewHolder chatViewHolder, int i) {
-        MatchLookupProto.MatchLookup chatResponse = possibleMatches.get(i);
+        MatchLookupProto.Match chatResponse = derivedMatches.get(i);
         Log.d("logTag", "chat: " + chatResponse);
         chatViewHolder.getGymDetails().setText(chatResponse.getGym().getGymName() + ", " + chatResponse.getGym().getBranch().getCity() + ", " + chatResponse.getGym().getBranch().getLocality());
         chatViewHolder.getUserDetails().setText(chatResponse.getUser().getUserName());
         chatViewHolder.getMessageButton().setOnClickListener(v -> {
             Log.d("logTag", "sending message to user " + chatResponse.getUser().getUserName());
             Toast.makeText(context, "starting chat", Toast.LENGTH_LONG).show();
+            IntentUtil.openWhatsAppConversationUsingUri(context, chatResponse.getUser().getMobileNo(),
+                    String.format(context.getString(R.string.message_body), chatResponse.getUser().getUserName()));
         });
 
     }
 
     @Override
     public int getItemCount() {
-        return possibleMatches.size();
+        return derivedMatches.size();
     }
 }
