@@ -22,7 +22,7 @@ android {
         targetCompatibility = 1.8
     }
     configurations {
-        all*.exclude module:'protobuf-java'
+        all*.exclude module: 'protobuf-java'
     }
 }
 
