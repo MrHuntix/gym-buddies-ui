@@ -3,64 +3,52 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_gyms">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_gyms"
         android:name="com.example.gym.buddies.ui.profile.ui.gyms.GymsFragment"
         android:label="@string/menu_gyms"
         tools:layout="@layout/fragment_gyms" >
         <action
-            android:id="@+id/action_nav_home_to_nav_gallery"
-            app:destination="@id/nav_gallery" />
+            android:id="@+id/action_nav_gyms_to_nav_matches"
+            app:destination="@id/nav_matches" />
         <action
-            android:id="@+id/action_nav_home_to_nav_slideshow"
-            app:destination="@id/nav_slideshow" />
+            android:id="@+id/action_nav_gyms_to_nav_requests"
+            app:destination="@id/nav_requests" />
         <action
-            android:id="@+id/action_nav_home_to_nav_share"
-            app:destination="@id/nav_share" />
-        <action
-            android:id="@+id/action_nav_home_to_nav_send"
-            app:destination="@id/nav_send" />
+            android:id="@+id/action_nav_gyms_to_nav_friends"
+            app:destination="@id/nav_friends" />
     </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_matches"
         android:name="com.example.gym.buddies.ui.profile.ui.matches.MatchesFragment"
         android:label="@string/menu_matches"
-        tools:layout="@layout/fragment_matches" >
+        tools:layout="@layout/fragment_gyms" >
         <action
-            android:id="@+id/action_nav_gallery_to_nav_home"
-            app:destination="@id/nav_home" />
+            android:id="@+id/action_nav_matches_to_nav_gyms"
+            app:destination="@id/nav_gyms" />
     </fragment>
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.gym.buddies.ui.profile.ui.chats.ChatFragment"
-        android:label="@string/menu_chats"
-        tools:layout="@layout/fragment_chat" >
+        android:id="@+id/nav_requests"
+        android:name="com.example.gym.buddies.ui.profile.ui.requests.RequestFragment"
+        android:label="@string/menu_requests"
+        tools:layout="@layout/fragment_gyms" >
         <action
-            android:id="@+id/action_nav_slideshow_to_nav_home"
-            app:destination="@id/nav_home" />
+            android:id="@+id/action_nav_requests_to_nav_gyms"
+            app:destination="@id/nav_gyms" />
     </fragment>
 
     <fragment
-        android:id="@+id/nav_share"
-        android:name="com.example.gym.buddies.ui.profile.ui.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" >
+        android:id="@+id/nav_friends"
+        android:name="com.example.gym.buddies.ui.profile.ui.friends.FriendFragment"
+        android:label="@string/menu_friends"
+        tools:layout="@layout/fragment_gyms" >
         <action
-            android:id="@+id/action_nav_share_to_nav_home"
-            app:destination="@id/nav_home" />
+            android:id="@+id/action_nav_friends_to_nav_gyms"
+            app:destination="@id/nav_gyms" />
     </fragment>
 
-    <fragment
-        android:id="@+id/nav_send"
-        android:name="com.example.gym.buddies.ui.profile.ui.other.OtherFragment"
-        android:label="@string/menu_request"
-        tools:layout="@layout/fragment_chat" >
-        <action
-            android:id="@+id/action_nav_send_to_nav_home"
-            app:destination="@id/nav_home" />
-    </fragment>
 </navigation>
