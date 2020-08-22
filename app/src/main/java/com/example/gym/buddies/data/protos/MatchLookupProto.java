@@ -3483,21 +3483,15 @@ public final class MatchLookupProto {
     }
   }
 
-  public interface MatchOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:gbuddy.Match)
+  public interface FriendOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:gbuddy.Friend)
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>int32 matchId = 1;</code>
-     * @return The matchId.
+     * <code>int32 matchRequestId = 1;</code>
+     * @return The matchRequestId.
      */
-    int getMatchId();
-
-    /**
-     * <code>int32 lookupId = 2;</code>
-     * @return The lookupId.
-     */
-    int getLookupId();
+    int getMatchRequestId();
 
     /**
      * <code>.gbuddy.User user = 16;</code>
@@ -3522,65 +3516,39 @@ public final class MatchLookupProto {
     Gym getGym();
   }
   /**
-   * Protobuf type {@code gbuddy.Match}
+   * Protobuf type {@code gbuddy.Friend}
    */
-  public  static final class Match extends
+  public  static final class Friend extends
       com.google.protobuf.GeneratedMessageLite<
-          Match, Match.Builder> implements
-      // @@protoc_insertion_point(message_implements:gbuddy.Match)
-      MatchOrBuilder {
-    private Match() {
+          Friend, Friend.Builder> implements
+      // @@protoc_insertion_point(message_implements:gbuddy.Friend)
+      FriendOrBuilder {
+    private Friend() {
     }
-    public static final int MATCHID_FIELD_NUMBER = 1;
-    private int matchId_;
+    public static final int MATCHREQUESTID_FIELD_NUMBER = 1;
+    private int matchRequestId_;
     /**
-     * <code>int32 matchId = 1;</code>
-     * @return The matchId.
+     * <code>int32 matchRequestId = 1;</code>
+     * @return The matchRequestId.
      */
     @Override
-    public int getMatchId() {
-      return matchId_;
+    public int getMatchRequestId() {
+      return matchRequestId_;
     }
     /**
-     * <code>int32 matchId = 1;</code>
-     * @param value The matchId to set.
+     * <code>int32 matchRequestId = 1;</code>
+     * @param value The matchRequestId to set.
      */
-    private void setMatchId(int value) {
+    private void setMatchRequestId(int value) {
       
-      matchId_ = value;
+      matchRequestId_ = value;
     }
     /**
-     * <code>int32 matchId = 1;</code>
+     * <code>int32 matchRequestId = 1;</code>
      */
-    private void clearMatchId() {
+    private void clearMatchRequestId() {
       
-      matchId_ = 0;
-    }
-
-    public static final int LOOKUPID_FIELD_NUMBER = 2;
-    private int lookupId_;
-    /**
-     * <code>int32 lookupId = 2;</code>
-     * @return The lookupId.
-     */
-    @Override
-    public int getLookupId() {
-      return lookupId_;
-    }
-    /**
-     * <code>int32 lookupId = 2;</code>
-     * @param value The lookupId to set.
-     */
-    private void setLookupId(int value) {
-      
-      lookupId_ = value;
-    }
-    /**
-     * <code>int32 lookupId = 2;</code>
-     */
-    private void clearLookupId() {
-      
-      lookupId_ = 0;
+      matchRequestId_ = 0;
     }
 
     public static final int USER_FIELD_NUMBER = 16;
@@ -3675,73 +3643,73 @@ public final class MatchLookupProto {
       
     }
 
-    public static Match parseFrom(
+    public static Friend parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static Match parseFrom(
+    public static Friend parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static Match parseFrom(
+    public static Friend parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static Match parseFrom(
+    public static Friend parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static Match parseFrom(byte[] data)
+    public static Friend parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static Match parseFrom(
+    public static Friend parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static Match parseFrom(java.io.InputStream input)
+    public static Friend parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static Match parseFrom(
+    public static Friend parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static Match parseDelimitedFrom(java.io.InputStream input)
+    public static Friend parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static Match parseDelimitedFrom(
+    public static Friend parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static Match parseFrom(
+    public static Friend parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static Match parseFrom(
+    public static Friend parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3752,77 +3720,49 @@ public final class MatchLookupProto {
     public static Builder newBuilder() {
       return (Builder) DEFAULT_INSTANCE.createBuilder();
     }
-    public static Builder newBuilder(Match prototype) {
+    public static Builder newBuilder(Friend prototype) {
       return (Builder) DEFAULT_INSTANCE.createBuilder(prototype);
     }
 
     /**
-     * Protobuf type {@code gbuddy.Match}
+     * Protobuf type {@code gbuddy.Friend}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          Match, Builder> implements
-        // @@protoc_insertion_point(builder_implements:gbuddy.Match)
-        MatchOrBuilder {
-      // Construct using com.example.gym.buddies.data.protos.MatchLookupProto.Match.newBuilder()
+          Friend, Builder> implements
+        // @@protoc_insertion_point(builder_implements:gbuddy.Friend)
+        FriendOrBuilder {
+      // Construct using com.example.gym.buddies.data.protos.MatchLookupProto.Friend.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
       }
 
 
       /**
-       * <code>int32 matchId = 1;</code>
-       * @return The matchId.
+       * <code>int32 matchRequestId = 1;</code>
+       * @return The matchRequestId.
        */
       @Override
-      public int getMatchId() {
-        return instance.getMatchId();
+      public int getMatchRequestId() {
+        return instance.getMatchRequestId();
       }
       /**
-       * <code>int32 matchId = 1;</code>
-       * @param value The matchId to set.
+       * <code>int32 matchRequestId = 1;</code>
+       * @param value The matchRequestId to set.
        * @return This builder for chaining.
        */
-      public Builder setMatchId(int value) {
+      public Builder setMatchRequestId(int value) {
         copyOnWrite();
-        instance.setMatchId(value);
+        instance.setMatchRequestId(value);
         return this;
       }
       /**
-       * <code>int32 matchId = 1;</code>
+       * <code>int32 matchRequestId = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMatchId() {
+      public Builder clearMatchRequestId() {
         copyOnWrite();
-        instance.clearMatchId();
-        return this;
-      }
-
-      /**
-       * <code>int32 lookupId = 2;</code>
-       * @return The lookupId.
-       */
-      @Override
-      public int getLookupId() {
-        return instance.getLookupId();
-      }
-      /**
-       * <code>int32 lookupId = 2;</code>
-       * @param value The lookupId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLookupId(int value) {
-        copyOnWrite();
-        instance.setLookupId(value);
-        return this;
-      }
-      /**
-       * <code>int32 lookupId = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLookupId() {
-        copyOnWrite();
-        instance.clearLookupId();
+        instance.clearMatchRequestId();
         return this;
       }
 
@@ -3920,7 +3860,7 @@ public final class MatchLookupProto {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:gbuddy.Match)
+      // @@protoc_insertion_point(builder_scope:gbuddy.Friend)
     }
     @Override
     @SuppressWarnings({"unchecked", "fallthrough"})
@@ -3929,21 +3869,20 @@ public final class MatchLookupProto {
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new Match();
+          return new Friend();
         }
         case NEW_BUILDER: {
           return new Builder();
         }
         case BUILD_MESSAGE_INFO: {
             Object[] objects = new Object[] {
-              "matchId_",
-              "lookupId_",
+              "matchRequestId_",
               "user_",
               "gym_",
             };
             String info =
-                "\u0000\u0004\u0000\u0000\u0001\u0011\u0004\u0000\u0000\u0000\u0001\u0004\u0002\u0004" +
-                "\u0010\t\u0011\t";
+                "\u0000\u0003\u0000\u0000\u0001\u0011\u0003\u0000\u0000\u0000\u0001\u0004\u0010\t" +
+                "\u0011\t";
             return newMessageInfo(DEFAULT_INSTANCE, info, objects);
         }
         // fall through
@@ -3951,13 +3890,13 @@ public final class MatchLookupProto {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          com.google.protobuf.Parser<Match> parser = PARSER;
+          com.google.protobuf.Parser<Friend> parser = PARSER;
           if (parser == null) {
-            synchronized (Match.class) {
+            synchronized (Friend.class) {
               parser = PARSER;
               if (parser == null) {
                 parser =
-                    new DefaultInstanceBasedParser<Match>(
+                    new DefaultInstanceBasedParser<Friend>(
                         DEFAULT_INSTANCE);
                 PARSER = parser;
               }
@@ -3976,30 +3915,30 @@ public final class MatchLookupProto {
     }
 
 
-    // @@protoc_insertion_point(class_scope:gbuddy.Match)
-    private static final Match DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:gbuddy.Friend)
+    private static final Friend DEFAULT_INSTANCE;
     static {
-      Match defaultInstance = new Match();
+      Friend defaultInstance = new Friend();
       // New instances are implicitly immutable so no need to make
       // immutable.
       DEFAULT_INSTANCE = defaultInstance;
       com.google.protobuf.GeneratedMessageLite.registerDefaultInstance(
-        Match.class, defaultInstance);
+        Friend.class, defaultInstance);
     }
 
-    public static Match getDefaultInstance() {
+    public static Friend getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<Match> PARSER;
+    private static volatile com.google.protobuf.Parser<Friend> PARSER;
 
-    public static com.google.protobuf.Parser<Match> parser() {
+    public static com.google.protobuf.Parser<Friend> parser() {
       return DEFAULT_INSTANCE.getParserForType();
     }
   }
 
-  public interface ChatResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:gbuddy.ChatResponse)
+  public interface FriendResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:gbuddy.FriendResponse)
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
@@ -4021,30 +3960,30 @@ public final class MatchLookupProto {
         getMessageBytes();
 
     /**
-     * <code>repeated .gbuddy.Match matches = 17;</code>
+     * <code>repeated .gbuddy.Friend friends = 17;</code>
      */
-    java.util.List<Match>
-        getMatchesList();
+    java.util.List<Friend>
+        getFriendsList();
     /**
-     * <code>repeated .gbuddy.Match matches = 17;</code>
+     * <code>repeated .gbuddy.Friend friends = 17;</code>
      */
-    Match getMatches(int index);
+    Friend getFriends(int index);
     /**
-     * <code>repeated .gbuddy.Match matches = 17;</code>
+     * <code>repeated .gbuddy.Friend friends = 17;</code>
      */
-    int getMatchesCount();
+    int getFriendsCount();
   }
   /**
-   * Protobuf type {@code gbuddy.ChatResponse}
+   * Protobuf type {@code gbuddy.FriendResponse}
    */
-  public  static final class ChatResponse extends
+  public  static final class FriendResponse extends
       com.google.protobuf.GeneratedMessageLite<
-          ChatResponse, ChatResponse.Builder> implements
-      // @@protoc_insertion_point(message_implements:gbuddy.ChatResponse)
-      ChatResponseOrBuilder {
-    private ChatResponse() {
+          FriendResponse, FriendResponse.Builder> implements
+      // @@protoc_insertion_point(message_implements:gbuddy.FriendResponse)
+      FriendResponseOrBuilder {
+    private FriendResponse() {
       message_ = "";
-      matches_ = emptyProtobufList();
+      friends_ = emptyProtobufList();
     }
     public static final int RESPONSECODE_FIELD_NUMBER = 1;
     private int responseCode_;
@@ -4119,167 +4058,167 @@ public final class MatchLookupProto {
       
     }
 
-    public static final int MATCHES_FIELD_NUMBER = 17;
-    private com.google.protobuf.Internal.ProtobufList<Match> matches_;
+    public static final int FRIENDS_FIELD_NUMBER = 17;
+    private com.google.protobuf.Internal.ProtobufList<Friend> friends_;
     /**
-     * <code>repeated .gbuddy.Match matches = 17;</code>
+     * <code>repeated .gbuddy.Friend friends = 17;</code>
      */
     @Override
-    public java.util.List<Match> getMatchesList() {
-      return matches_;
+    public java.util.List<Friend> getFriendsList() {
+      return friends_;
     }
     /**
-     * <code>repeated .gbuddy.Match matches = 17;</code>
+     * <code>repeated .gbuddy.Friend friends = 17;</code>
      */
-    public java.util.List<? extends MatchOrBuilder>
-        getMatchesOrBuilderList() {
-      return matches_;
+    public java.util.List<? extends FriendOrBuilder>
+        getFriendsOrBuilderList() {
+      return friends_;
     }
     /**
-     * <code>repeated .gbuddy.Match matches = 17;</code>
-     */
-    @Override
-    public int getMatchesCount() {
-      return matches_.size();
-    }
-    /**
-     * <code>repeated .gbuddy.Match matches = 17;</code>
+     * <code>repeated .gbuddy.Friend friends = 17;</code>
      */
     @Override
-    public Match getMatches(int index) {
-      return matches_.get(index);
+    public int getFriendsCount() {
+      return friends_.size();
     }
     /**
-     * <code>repeated .gbuddy.Match matches = 17;</code>
+     * <code>repeated .gbuddy.Friend friends = 17;</code>
      */
-    public MatchOrBuilder getMatchesOrBuilder(
+    @Override
+    public Friend getFriends(int index) {
+      return friends_.get(index);
+    }
+    /**
+     * <code>repeated .gbuddy.Friend friends = 17;</code>
+     */
+    public FriendOrBuilder getFriendsOrBuilder(
         int index) {
-      return matches_.get(index);
+      return friends_.get(index);
     }
-    private void ensureMatchesIsMutable() {
-      com.google.protobuf.Internal.ProtobufList<Match> tmp = matches_;
+    private void ensureFriendsIsMutable() {
+      com.google.protobuf.Internal.ProtobufList<Friend> tmp = friends_;
       if (!tmp.isModifiable()) {
-        matches_ =
+        friends_ =
             com.google.protobuf.GeneratedMessageLite.mutableCopy(tmp);
        }
     }
 
     /**
-     * <code>repeated .gbuddy.Match matches = 17;</code>
+     * <code>repeated .gbuddy.Friend friends = 17;</code>
      */
-    private void setMatches(
-        int index, Match value) {
+    private void setFriends(
+        int index, Friend value) {
       value.getClass();
-  ensureMatchesIsMutable();
-      matches_.set(index, value);
+  ensureFriendsIsMutable();
+      friends_.set(index, value);
     }
     /**
-     * <code>repeated .gbuddy.Match matches = 17;</code>
+     * <code>repeated .gbuddy.Friend friends = 17;</code>
      */
-    private void addMatches(Match value) {
+    private void addFriends(Friend value) {
       value.getClass();
-  ensureMatchesIsMutable();
-      matches_.add(value);
+  ensureFriendsIsMutable();
+      friends_.add(value);
     }
     /**
-     * <code>repeated .gbuddy.Match matches = 17;</code>
+     * <code>repeated .gbuddy.Friend friends = 17;</code>
      */
-    private void addMatches(
-        int index, Match value) {
+    private void addFriends(
+        int index, Friend value) {
       value.getClass();
-  ensureMatchesIsMutable();
-      matches_.add(index, value);
+  ensureFriendsIsMutable();
+      friends_.add(index, value);
     }
     /**
-     * <code>repeated .gbuddy.Match matches = 17;</code>
+     * <code>repeated .gbuddy.Friend friends = 17;</code>
      */
-    private void addAllMatches(
-        Iterable<? extends Match> values) {
-      ensureMatchesIsMutable();
+    private void addAllFriends(
+        Iterable<? extends Friend> values) {
+      ensureFriendsIsMutable();
       com.google.protobuf.AbstractMessageLite.addAll(
-          values, matches_);
+          values, friends_);
     }
     /**
-     * <code>repeated .gbuddy.Match matches = 17;</code>
+     * <code>repeated .gbuddy.Friend friends = 17;</code>
      */
-    private void clearMatches() {
-      matches_ = emptyProtobufList();
+    private void clearFriends() {
+      friends_ = emptyProtobufList();
     }
     /**
-     * <code>repeated .gbuddy.Match matches = 17;</code>
+     * <code>repeated .gbuddy.Friend friends = 17;</code>
      */
-    private void removeMatches(int index) {
-      ensureMatchesIsMutable();
-      matches_.remove(index);
+    private void removeFriends(int index) {
+      ensureFriendsIsMutable();
+      friends_.remove(index);
     }
 
-    public static ChatResponse parseFrom(
+    public static FriendResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static ChatResponse parseFrom(
+    public static FriendResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static ChatResponse parseFrom(
+    public static FriendResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static ChatResponse parseFrom(
+    public static FriendResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static ChatResponse parseFrom(byte[] data)
+    public static FriendResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static ChatResponse parseFrom(
+    public static FriendResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static ChatResponse parseFrom(java.io.InputStream input)
+    public static FriendResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static ChatResponse parseFrom(
+    public static FriendResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static ChatResponse parseDelimitedFrom(java.io.InputStream input)
+    public static FriendResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static ChatResponse parseDelimitedFrom(
+    public static FriendResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static ChatResponse parseFrom(
+    public static FriendResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static ChatResponse parseFrom(
+    public static FriendResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4290,19 +4229,19 @@ public final class MatchLookupProto {
     public static Builder newBuilder() {
       return (Builder) DEFAULT_INSTANCE.createBuilder();
     }
-    public static Builder newBuilder(ChatResponse prototype) {
+    public static Builder newBuilder(FriendResponse prototype) {
       return (Builder) DEFAULT_INSTANCE.createBuilder(prototype);
     }
 
     /**
-     * Protobuf type {@code gbuddy.ChatResponse}
+     * Protobuf type {@code gbuddy.FriendResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          ChatResponse, Builder> implements
-        // @@protoc_insertion_point(builder_implements:gbuddy.ChatResponse)
-        ChatResponseOrBuilder {
-      // Construct using com.example.gym.buddies.data.protos.MatchLookupProto.ChatResponse.newBuilder()
+          FriendResponse, Builder> implements
+        // @@protoc_insertion_point(builder_implements:gbuddy.FriendResponse)
+        FriendResponseOrBuilder {
+      // Construct using com.example.gym.buddies.data.protos.MatchLookupProto.FriendResponse.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
       }
@@ -4386,108 +4325,108 @@ public final class MatchLookupProto {
       }
 
       /**
-       * <code>repeated .gbuddy.Match matches = 17;</code>
+       * <code>repeated .gbuddy.Friend friends = 17;</code>
        */
       @Override
-      public java.util.List<Match> getMatchesList() {
+      public java.util.List<Friend> getFriendsList() {
         return java.util.Collections.unmodifiableList(
-            instance.getMatchesList());
+            instance.getFriendsList());
       }
       /**
-       * <code>repeated .gbuddy.Match matches = 17;</code>
+       * <code>repeated .gbuddy.Friend friends = 17;</code>
        */
       @Override
-      public int getMatchesCount() {
-        return instance.getMatchesCount();
+      public int getFriendsCount() {
+        return instance.getFriendsCount();
       }/**
-       * <code>repeated .gbuddy.Match matches = 17;</code>
+       * <code>repeated .gbuddy.Friend friends = 17;</code>
        */
       @Override
-      public Match getMatches(int index) {
-        return instance.getMatches(index);
+      public Friend getFriends(int index) {
+        return instance.getFriends(index);
       }
       /**
-       * <code>repeated .gbuddy.Match matches = 17;</code>
+       * <code>repeated .gbuddy.Friend friends = 17;</code>
        */
-      public Builder setMatches(
-          int index, Match value) {
+      public Builder setFriends(
+          int index, Friend value) {
         copyOnWrite();
-        instance.setMatches(index, value);
+        instance.setFriends(index, value);
         return this;
       }
       /**
-       * <code>repeated .gbuddy.Match matches = 17;</code>
+       * <code>repeated .gbuddy.Friend friends = 17;</code>
        */
-      public Builder setMatches(
-          int index, Match.Builder builderForValue) {
+      public Builder setFriends(
+          int index, Friend.Builder builderForValue) {
         copyOnWrite();
-        instance.setMatches(index,
+        instance.setFriends(index,
             builderForValue.build());
         return this;
       }
       /**
-       * <code>repeated .gbuddy.Match matches = 17;</code>
+       * <code>repeated .gbuddy.Friend friends = 17;</code>
        */
-      public Builder addMatches(Match value) {
+      public Builder addFriends(Friend value) {
         copyOnWrite();
-        instance.addMatches(value);
+        instance.addFriends(value);
         return this;
       }
       /**
-       * <code>repeated .gbuddy.Match matches = 17;</code>
+       * <code>repeated .gbuddy.Friend friends = 17;</code>
        */
-      public Builder addMatches(
-          int index, Match value) {
+      public Builder addFriends(
+          int index, Friend value) {
         copyOnWrite();
-        instance.addMatches(index, value);
+        instance.addFriends(index, value);
         return this;
       }
       /**
-       * <code>repeated .gbuddy.Match matches = 17;</code>
+       * <code>repeated .gbuddy.Friend friends = 17;</code>
        */
-      public Builder addMatches(
-          Match.Builder builderForValue) {
+      public Builder addFriends(
+          Friend.Builder builderForValue) {
         copyOnWrite();
-        instance.addMatches(builderForValue.build());
+        instance.addFriends(builderForValue.build());
         return this;
       }
       /**
-       * <code>repeated .gbuddy.Match matches = 17;</code>
+       * <code>repeated .gbuddy.Friend friends = 17;</code>
        */
-      public Builder addMatches(
-          int index, Match.Builder builderForValue) {
+      public Builder addFriends(
+          int index, Friend.Builder builderForValue) {
         copyOnWrite();
-        instance.addMatches(index,
+        instance.addFriends(index,
             builderForValue.build());
         return this;
       }
       /**
-       * <code>repeated .gbuddy.Match matches = 17;</code>
+       * <code>repeated .gbuddy.Friend friends = 17;</code>
        */
-      public Builder addAllMatches(
-          Iterable<? extends Match> values) {
+      public Builder addAllFriends(
+          Iterable<? extends Friend> values) {
         copyOnWrite();
-        instance.addAllMatches(values);
+        instance.addAllFriends(values);
         return this;
       }
       /**
-       * <code>repeated .gbuddy.Match matches = 17;</code>
+       * <code>repeated .gbuddy.Friend friends = 17;</code>
        */
-      public Builder clearMatches() {
+      public Builder clearFriends() {
         copyOnWrite();
-        instance.clearMatches();
+        instance.clearFriends();
         return this;
       }
       /**
-       * <code>repeated .gbuddy.Match matches = 17;</code>
+       * <code>repeated .gbuddy.Friend friends = 17;</code>
        */
-      public Builder removeMatches(int index) {
+      public Builder removeFriends(int index) {
         copyOnWrite();
-        instance.removeMatches(index);
+        instance.removeFriends(index);
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:gbuddy.ChatResponse)
+      // @@protoc_insertion_point(builder_scope:gbuddy.FriendResponse)
     }
     @Override
     @SuppressWarnings({"unchecked", "fallthrough"})
@@ -4496,7 +4435,7 @@ public final class MatchLookupProto {
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new ChatResponse();
+          return new FriendResponse();
         }
         case NEW_BUILDER: {
           return new Builder();
@@ -4505,8 +4444,8 @@ public final class MatchLookupProto {
             Object[] objects = new Object[] {
               "responseCode_",
               "message_",
-              "matches_",
-              Match.class,
+              "friends_",
+              Friend.class,
             };
             String info =
                 "\u0000\u0003\u0000\u0000\u0001\u0011\u0003\u0000\u0001\u0000\u0001\u0004\u0002\u0208" +
@@ -4518,13 +4457,13 @@ public final class MatchLookupProto {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          com.google.protobuf.Parser<ChatResponse> parser = PARSER;
+          com.google.protobuf.Parser<FriendResponse> parser = PARSER;
           if (parser == null) {
-            synchronized (ChatResponse.class) {
+            synchronized (FriendResponse.class) {
               parser = PARSER;
               if (parser == null) {
                 parser =
-                    new DefaultInstanceBasedParser<ChatResponse>(
+                    new DefaultInstanceBasedParser<FriendResponse>(
                         DEFAULT_INSTANCE);
                 PARSER = parser;
               }
@@ -4543,24 +4482,1045 @@ public final class MatchLookupProto {
     }
 
 
-    // @@protoc_insertion_point(class_scope:gbuddy.ChatResponse)
-    private static final ChatResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:gbuddy.FriendResponse)
+    private static final FriendResponse DEFAULT_INSTANCE;
     static {
-      ChatResponse defaultInstance = new ChatResponse();
+      FriendResponse defaultInstance = new FriendResponse();
       // New instances are implicitly immutable so no need to make
       // immutable.
       DEFAULT_INSTANCE = defaultInstance;
       com.google.protobuf.GeneratedMessageLite.registerDefaultInstance(
-        ChatResponse.class, defaultInstance);
+        FriendResponse.class, defaultInstance);
     }
 
-    public static ChatResponse getDefaultInstance() {
+    public static FriendResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<ChatResponse> PARSER;
+    private static volatile com.google.protobuf.Parser<FriendResponse> PARSER;
 
-    public static com.google.protobuf.Parser<ChatResponse> parser() {
+    public static com.google.protobuf.Parser<FriendResponse> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface FriendRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:gbuddy.FriendRequest)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>int32 matchRequestId = 1;</code>
+     * @return The matchRequestId.
+     */
+    int getMatchRequestId();
+
+    /**
+     * <code>.gbuddy.User user = 16;</code>
+     * @return Whether the user field is set.
+     */
+    boolean hasUser();
+    /**
+     * <code>.gbuddy.User user = 16;</code>
+     * @return The user.
+     */
+    User getUser();
+
+    /**
+     * <code>.gbuddy.Gym gym = 17;</code>
+     * @return Whether the gym field is set.
+     */
+    boolean hasGym();
+    /**
+     * <code>.gbuddy.Gym gym = 17;</code>
+     * @return The gym.
+     */
+    Gym getGym();
+  }
+  /**
+   * Protobuf type {@code gbuddy.FriendRequest}
+   */
+  public  static final class FriendRequest extends
+      com.google.protobuf.GeneratedMessageLite<
+          FriendRequest, FriendRequest.Builder> implements
+      // @@protoc_insertion_point(message_implements:gbuddy.FriendRequest)
+      FriendRequestOrBuilder {
+    private FriendRequest() {
+    }
+    public static final int MATCHREQUESTID_FIELD_NUMBER = 1;
+    private int matchRequestId_;
+    /**
+     * <code>int32 matchRequestId = 1;</code>
+     * @return The matchRequestId.
+     */
+    @Override
+    public int getMatchRequestId() {
+      return matchRequestId_;
+    }
+    /**
+     * <code>int32 matchRequestId = 1;</code>
+     * @param value The matchRequestId to set.
+     */
+    private void setMatchRequestId(int value) {
+      
+      matchRequestId_ = value;
+    }
+    /**
+     * <code>int32 matchRequestId = 1;</code>
+     */
+    private void clearMatchRequestId() {
+      
+      matchRequestId_ = 0;
+    }
+
+    public static final int USER_FIELD_NUMBER = 16;
+    private User user_;
+    /**
+     * <code>.gbuddy.User user = 16;</code>
+     */
+    @Override
+    public boolean hasUser() {
+      return user_ != null;
+    }
+    /**
+     * <code>.gbuddy.User user = 16;</code>
+     */
+    @Override
+    public User getUser() {
+      return user_ == null ? User.getDefaultInstance() : user_;
+    }
+    /**
+     * <code>.gbuddy.User user = 16;</code>
+     */
+    private void setUser(User value) {
+      value.getClass();
+  user_ = value;
+      
+      }
+    /**
+     * <code>.gbuddy.User user = 16;</code>
+     */
+    @SuppressWarnings({"ReferenceEquality"})
+    private void mergeUser(User value) {
+      value.getClass();
+  if (user_ != null &&
+          user_ != User.getDefaultInstance()) {
+        user_ =
+          User.newBuilder(user_).mergeFrom(value).buildPartial();
+      } else {
+        user_ = value;
+      }
+      
+    }
+    /**
+     * <code>.gbuddy.User user = 16;</code>
+     */
+    private void clearUser() {  user_ = null;
+      
+    }
+
+    public static final int GYM_FIELD_NUMBER = 17;
+    private Gym gym_;
+    /**
+     * <code>.gbuddy.Gym gym = 17;</code>
+     */
+    @Override
+    public boolean hasGym() {
+      return gym_ != null;
+    }
+    /**
+     * <code>.gbuddy.Gym gym = 17;</code>
+     */
+    @Override
+    public Gym getGym() {
+      return gym_ == null ? Gym.getDefaultInstance() : gym_;
+    }
+    /**
+     * <code>.gbuddy.Gym gym = 17;</code>
+     */
+    private void setGym(Gym value) {
+      value.getClass();
+  gym_ = value;
+      
+      }
+    /**
+     * <code>.gbuddy.Gym gym = 17;</code>
+     */
+    @SuppressWarnings({"ReferenceEquality"})
+    private void mergeGym(Gym value) {
+      value.getClass();
+  if (gym_ != null &&
+          gym_ != Gym.getDefaultInstance()) {
+        gym_ =
+          Gym.newBuilder(gym_).mergeFrom(value).buildPartial();
+      } else {
+        gym_ = value;
+      }
+      
+    }
+    /**
+     * <code>.gbuddy.Gym gym = 17;</code>
+     */
+    private void clearGym() {  gym_ = null;
+      
+    }
+
+    public static FriendRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static FriendRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static FriendRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static FriendRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static FriendRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static FriendRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static FriendRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static FriendRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static FriendRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static FriendRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static FriendRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static FriendRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return (Builder) DEFAULT_INSTANCE.createBuilder();
+    }
+    public static Builder newBuilder(FriendRequest prototype) {
+      return (Builder) DEFAULT_INSTANCE.createBuilder(prototype);
+    }
+
+    /**
+     * Protobuf type {@code gbuddy.FriendRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          FriendRequest, Builder> implements
+        // @@protoc_insertion_point(builder_implements:gbuddy.FriendRequest)
+        FriendRequestOrBuilder {
+      // Construct using com.example.gym.buddies.data.protos.MatchLookupProto.FriendRequest.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>int32 matchRequestId = 1;</code>
+       * @return The matchRequestId.
+       */
+      @Override
+      public int getMatchRequestId() {
+        return instance.getMatchRequestId();
+      }
+      /**
+       * <code>int32 matchRequestId = 1;</code>
+       * @param value The matchRequestId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMatchRequestId(int value) {
+        copyOnWrite();
+        instance.setMatchRequestId(value);
+        return this;
+      }
+      /**
+       * <code>int32 matchRequestId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMatchRequestId() {
+        copyOnWrite();
+        instance.clearMatchRequestId();
+        return this;
+      }
+
+      /**
+       * <code>.gbuddy.User user = 16;</code>
+       */
+      @Override
+      public boolean hasUser() {
+        return instance.hasUser();
+      }
+      /**
+       * <code>.gbuddy.User user = 16;</code>
+       */
+      @Override
+      public User getUser() {
+        return instance.getUser();
+      }
+      /**
+       * <code>.gbuddy.User user = 16;</code>
+       */
+      public Builder setUser(User value) {
+        copyOnWrite();
+        instance.setUser(value);
+        return this;
+        }
+      /**
+       * <code>.gbuddy.User user = 16;</code>
+       */
+      public Builder setUser(
+          User.Builder builderForValue) {
+        copyOnWrite();
+        instance.setUser(builderForValue.build());
+        return this;
+      }
+      /**
+       * <code>.gbuddy.User user = 16;</code>
+       */
+      public Builder mergeUser(User value) {
+        copyOnWrite();
+        instance.mergeUser(value);
+        return this;
+      }
+      /**
+       * <code>.gbuddy.User user = 16;</code>
+       */
+      public Builder clearUser() {  copyOnWrite();
+        instance.clearUser();
+        return this;
+      }
+
+      /**
+       * <code>.gbuddy.Gym gym = 17;</code>
+       */
+      @Override
+      public boolean hasGym() {
+        return instance.hasGym();
+      }
+      /**
+       * <code>.gbuddy.Gym gym = 17;</code>
+       */
+      @Override
+      public Gym getGym() {
+        return instance.getGym();
+      }
+      /**
+       * <code>.gbuddy.Gym gym = 17;</code>
+       */
+      public Builder setGym(Gym value) {
+        copyOnWrite();
+        instance.setGym(value);
+        return this;
+        }
+      /**
+       * <code>.gbuddy.Gym gym = 17;</code>
+       */
+      public Builder setGym(
+          Gym.Builder builderForValue) {
+        copyOnWrite();
+        instance.setGym(builderForValue.build());
+        return this;
+      }
+      /**
+       * <code>.gbuddy.Gym gym = 17;</code>
+       */
+      public Builder mergeGym(Gym value) {
+        copyOnWrite();
+        instance.mergeGym(value);
+        return this;
+      }
+      /**
+       * <code>.gbuddy.Gym gym = 17;</code>
+       */
+      public Builder clearGym() {  copyOnWrite();
+        instance.clearGym();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:gbuddy.FriendRequest)
+    }
+    @Override
+    @SuppressWarnings({"unchecked", "fallthrough"})
+    protected final Object dynamicMethod(
+        MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new FriendRequest();
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case BUILD_MESSAGE_INFO: {
+            Object[] objects = new Object[] {
+              "matchRequestId_",
+              "user_",
+              "gym_",
+            };
+            String info =
+                "\u0000\u0003\u0000\u0000\u0001\u0011\u0003\u0000\u0000\u0000\u0001\u0004\u0010\t" +
+                "\u0011\t";
+            return newMessageInfo(DEFAULT_INSTANCE, info, objects);
+        }
+        // fall through
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          com.google.protobuf.Parser<FriendRequest> parser = PARSER;
+          if (parser == null) {
+            synchronized (FriendRequest.class) {
+              parser = PARSER;
+              if (parser == null) {
+                parser =
+                    new DefaultInstanceBasedParser<FriendRequest>(
+                        DEFAULT_INSTANCE);
+                PARSER = parser;
+              }
+            }
+          }
+          return parser;
+      }
+      case GET_MEMOIZED_IS_INITIALIZED: {
+        return (byte) 1;
+      }
+      case SET_MEMOIZED_IS_INITIALIZED: {
+        return null;
+      }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:gbuddy.FriendRequest)
+    private static final FriendRequest DEFAULT_INSTANCE;
+    static {
+      FriendRequest defaultInstance = new FriendRequest();
+      // New instances are implicitly immutable so no need to make
+      // immutable.
+      DEFAULT_INSTANCE = defaultInstance;
+      com.google.protobuf.GeneratedMessageLite.registerDefaultInstance(
+        FriendRequest.class, defaultInstance);
+    }
+
+    public static FriendRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<FriendRequest> PARSER;
+
+    public static com.google.protobuf.Parser<FriendRequest> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface FriendRequestsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:gbuddy.FriendRequestsResponse)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>int32 responseCode = 1;</code>
+     * @return The responseCode.
+     */
+    int getResponseCode();
+
+    /**
+     * <code>string message = 2;</code>
+     * @return The message.
+     */
+    String getMessage();
+    /**
+     * <code>string message = 2;</code>
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+
+    /**
+     * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+     */
+    java.util.List<FriendRequest>
+        getFriendRequestsList();
+    /**
+     * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+     */
+    FriendRequest getFriendRequests(int index);
+    /**
+     * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+     */
+    int getFriendRequestsCount();
+  }
+  /**
+   * Protobuf type {@code gbuddy.FriendRequestsResponse}
+   */
+  public  static final class FriendRequestsResponse extends
+      com.google.protobuf.GeneratedMessageLite<
+          FriendRequestsResponse, FriendRequestsResponse.Builder> implements
+      // @@protoc_insertion_point(message_implements:gbuddy.FriendRequestsResponse)
+      FriendRequestsResponseOrBuilder {
+    private FriendRequestsResponse() {
+      message_ = "";
+      friendRequests_ = emptyProtobufList();
+    }
+    public static final int RESPONSECODE_FIELD_NUMBER = 1;
+    private int responseCode_;
+    /**
+     * <code>int32 responseCode = 1;</code>
+     * @return The responseCode.
+     */
+    @Override
+    public int getResponseCode() {
+      return responseCode_;
+    }
+    /**
+     * <code>int32 responseCode = 1;</code>
+     * @param value The responseCode to set.
+     */
+    private void setResponseCode(int value) {
+      
+      responseCode_ = value;
+    }
+    /**
+     * <code>int32 responseCode = 1;</code>
+     */
+    private void clearResponseCode() {
+      
+      responseCode_ = 0;
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 2;
+    private String message_;
+    /**
+     * <code>string message = 2;</code>
+     * @return The message.
+     */
+    @Override
+    public String getMessage() {
+      return message_;
+    }
+    /**
+     * <code>string message = 2;</code>
+     * @return The bytes for message.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(message_);
+    }
+    /**
+     * <code>string message = 2;</code>
+     * @param value The message to set.
+     */
+    private void setMessage(
+        String value) {
+      value.getClass();
+  
+      message_ = value;
+    }
+    /**
+     * <code>string message = 2;</code>
+     */
+    private void clearMessage() {
+      
+      message_ = getDefaultInstance().getMessage();
+    }
+    /**
+     * <code>string message = 2;</code>
+     * @param value The bytes for message to set.
+     */
+    private void setMessageBytes(
+        com.google.protobuf.ByteString value) {
+      checkByteStringIsUtf8(value);
+      message_ = value.toStringUtf8();
+      
+    }
+
+    public static final int FRIENDREQUESTS_FIELD_NUMBER = 16;
+    private com.google.protobuf.Internal.ProtobufList<FriendRequest> friendRequests_;
+    /**
+     * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+     */
+    @Override
+    public java.util.List<FriendRequest> getFriendRequestsList() {
+      return friendRequests_;
+    }
+    /**
+     * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+     */
+    public java.util.List<? extends FriendRequestOrBuilder>
+        getFriendRequestsOrBuilderList() {
+      return friendRequests_;
+    }
+    /**
+     * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+     */
+    @Override
+    public int getFriendRequestsCount() {
+      return friendRequests_.size();
+    }
+    /**
+     * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+     */
+    @Override
+    public FriendRequest getFriendRequests(int index) {
+      return friendRequests_.get(index);
+    }
+    /**
+     * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+     */
+    public FriendRequestOrBuilder getFriendRequestsOrBuilder(
+        int index) {
+      return friendRequests_.get(index);
+    }
+    private void ensureFriendRequestsIsMutable() {
+      com.google.protobuf.Internal.ProtobufList<FriendRequest> tmp = friendRequests_;
+      if (!tmp.isModifiable()) {
+        friendRequests_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(tmp);
+       }
+    }
+
+    /**
+     * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+     */
+    private void setFriendRequests(
+        int index, FriendRequest value) {
+      value.getClass();
+  ensureFriendRequestsIsMutable();
+      friendRequests_.set(index, value);
+    }
+    /**
+     * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+     */
+    private void addFriendRequests(FriendRequest value) {
+      value.getClass();
+  ensureFriendRequestsIsMutable();
+      friendRequests_.add(value);
+    }
+    /**
+     * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+     */
+    private void addFriendRequests(
+        int index, FriendRequest value) {
+      value.getClass();
+  ensureFriendRequestsIsMutable();
+      friendRequests_.add(index, value);
+    }
+    /**
+     * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+     */
+    private void addAllFriendRequests(
+        Iterable<? extends FriendRequest> values) {
+      ensureFriendRequestsIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, friendRequests_);
+    }
+    /**
+     * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+     */
+    private void clearFriendRequests() {
+      friendRequests_ = emptyProtobufList();
+    }
+    /**
+     * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+     */
+    private void removeFriendRequests(int index) {
+      ensureFriendRequestsIsMutable();
+      friendRequests_.remove(index);
+    }
+
+    public static FriendRequestsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static FriendRequestsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static FriendRequestsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static FriendRequestsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static FriendRequestsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static FriendRequestsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static FriendRequestsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static FriendRequestsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static FriendRequestsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static FriendRequestsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static FriendRequestsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static FriendRequestsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return (Builder) DEFAULT_INSTANCE.createBuilder();
+    }
+    public static Builder newBuilder(FriendRequestsResponse prototype) {
+      return (Builder) DEFAULT_INSTANCE.createBuilder(prototype);
+    }
+
+    /**
+     * Protobuf type {@code gbuddy.FriendRequestsResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          FriendRequestsResponse, Builder> implements
+        // @@protoc_insertion_point(builder_implements:gbuddy.FriendRequestsResponse)
+        FriendRequestsResponseOrBuilder {
+      // Construct using com.example.gym.buddies.data.protos.MatchLookupProto.FriendRequestsResponse.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>int32 responseCode = 1;</code>
+       * @return The responseCode.
+       */
+      @Override
+      public int getResponseCode() {
+        return instance.getResponseCode();
+      }
+      /**
+       * <code>int32 responseCode = 1;</code>
+       * @param value The responseCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResponseCode(int value) {
+        copyOnWrite();
+        instance.setResponseCode(value);
+        return this;
+      }
+      /**
+       * <code>int32 responseCode = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearResponseCode() {
+        copyOnWrite();
+        instance.clearResponseCode();
+        return this;
+      }
+
+      /**
+       * <code>string message = 2;</code>
+       * @return The message.
+       */
+      @Override
+      public String getMessage() {
+        return instance.getMessage();
+      }
+      /**
+       * <code>string message = 2;</code>
+       * @return The bytes for message.
+       */
+      @Override
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        return instance.getMessageBytes();
+      }
+      /**
+       * <code>string message = 2;</code>
+       * @param value The message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessage(
+          String value) {
+        copyOnWrite();
+        instance.setMessage(value);
+        return this;
+      }
+      /**
+       * <code>string message = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMessage() {
+        copyOnWrite();
+        instance.clearMessage();
+        return this;
+      }
+      /**
+       * <code>string message = 2;</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setMessageBytes(value);
+        return this;
+      }
+
+      /**
+       * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+       */
+      @Override
+      public java.util.List<FriendRequest> getFriendRequestsList() {
+        return java.util.Collections.unmodifiableList(
+            instance.getFriendRequestsList());
+      }
+      /**
+       * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+       */
+      @Override
+      public int getFriendRequestsCount() {
+        return instance.getFriendRequestsCount();
+      }/**
+       * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+       */
+      @Override
+      public FriendRequest getFriendRequests(int index) {
+        return instance.getFriendRequests(index);
+      }
+      /**
+       * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+       */
+      public Builder setFriendRequests(
+          int index, FriendRequest value) {
+        copyOnWrite();
+        instance.setFriendRequests(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+       */
+      public Builder setFriendRequests(
+          int index, FriendRequest.Builder builderForValue) {
+        copyOnWrite();
+        instance.setFriendRequests(index,
+            builderForValue.build());
+        return this;
+      }
+      /**
+       * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+       */
+      public Builder addFriendRequests(FriendRequest value) {
+        copyOnWrite();
+        instance.addFriendRequests(value);
+        return this;
+      }
+      /**
+       * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+       */
+      public Builder addFriendRequests(
+          int index, FriendRequest value) {
+        copyOnWrite();
+        instance.addFriendRequests(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+       */
+      public Builder addFriendRequests(
+          FriendRequest.Builder builderForValue) {
+        copyOnWrite();
+        instance.addFriendRequests(builderForValue.build());
+        return this;
+      }
+      /**
+       * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+       */
+      public Builder addFriendRequests(
+          int index, FriendRequest.Builder builderForValue) {
+        copyOnWrite();
+        instance.addFriendRequests(index,
+            builderForValue.build());
+        return this;
+      }
+      /**
+       * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+       */
+      public Builder addAllFriendRequests(
+          Iterable<? extends FriendRequest> values) {
+        copyOnWrite();
+        instance.addAllFriendRequests(values);
+        return this;
+      }
+      /**
+       * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+       */
+      public Builder clearFriendRequests() {
+        copyOnWrite();
+        instance.clearFriendRequests();
+        return this;
+      }
+      /**
+       * <code>repeated .gbuddy.FriendRequest friendRequests = 16;</code>
+       */
+      public Builder removeFriendRequests(int index) {
+        copyOnWrite();
+        instance.removeFriendRequests(index);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:gbuddy.FriendRequestsResponse)
+    }
+    @Override
+    @SuppressWarnings({"unchecked", "fallthrough"})
+    protected final Object dynamicMethod(
+        MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new FriendRequestsResponse();
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case BUILD_MESSAGE_INFO: {
+            Object[] objects = new Object[] {
+              "responseCode_",
+              "message_",
+              "friendRequests_",
+              FriendRequest.class,
+            };
+            String info =
+                "\u0000\u0003\u0000\u0000\u0001\u0010\u0003\u0000\u0001\u0000\u0001\u0004\u0002\u0208" +
+                "\u0010\u001b";
+            return newMessageInfo(DEFAULT_INSTANCE, info, objects);
+        }
+        // fall through
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          com.google.protobuf.Parser<FriendRequestsResponse> parser = PARSER;
+          if (parser == null) {
+            synchronized (FriendRequestsResponse.class) {
+              parser = PARSER;
+              if (parser == null) {
+                parser =
+                    new DefaultInstanceBasedParser<FriendRequestsResponse>(
+                        DEFAULT_INSTANCE);
+                PARSER = parser;
+              }
+            }
+          }
+          return parser;
+      }
+      case GET_MEMOIZED_IS_INITIALIZED: {
+        return (byte) 1;
+      }
+      case SET_MEMOIZED_IS_INITIALIZED: {
+        return null;
+      }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:gbuddy.FriendRequestsResponse)
+    private static final FriendRequestsResponse DEFAULT_INSTANCE;
+    static {
+      FriendRequestsResponse defaultInstance = new FriendRequestsResponse();
+      // New instances are implicitly immutable so no need to make
+      // immutable.
+      DEFAULT_INSTANCE = defaultInstance;
+      com.google.protobuf.GeneratedMessageLite.registerDefaultInstance(
+        FriendRequestsResponse.class, defaultInstance);
+    }
+
+    public static FriendRequestsResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<FriendRequestsResponse> PARSER;
+
+    public static com.google.protobuf.Parser<FriendRequestsResponse> parser() {
       return DEFAULT_INSTANCE.getParserForType();
     }
   }

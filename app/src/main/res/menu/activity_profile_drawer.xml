@@ -4,21 +4,44 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+<!--        <item-->
+<!--            android:id="@+id/nav_home"-->
+<!--            android:icon="@drawable/ic_menu_camera"-->
+<!--            android:title="@string/menu_gyms" />-->
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_gyms"
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_gyms" />
+
+<!--        <item-->
+<!--            android:id="@+id/nav_gallery"-->
+<!--            android:icon="@drawable/ic_menu_matches"-->
+<!--            android:title="@string/menu_matches" />-->
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_matches"
             android:icon="@drawable/ic_menu_matches"
             android:title="@string/menu_matches" />
+
+<!--        <item-->
+<!--            android:id="@+id/nav_requests"-->
+<!--            android:icon="@drawable/ic_menu_chats"-->
+<!--            android:title="@string/menu_requests" />-->
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_requests"
             android:icon="@drawable/ic_menu_chats"
-            android:title="@string/menu_chats" />
+            android:title="@string/menu_requests" />
+
+<!--        <item-->
+<!--            android:id="@+id/nav_slideshow"-->
+<!--            android:icon="@drawable/ic_menu_chats"-->
+<!--            android:title="@string/menu_friends" />-->
+        <item
+            android:id="@+id/nav_friends"
+            android:icon="@drawable/ic_menu_chats"
+            android:title="@string/menu_friends" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/communicate">
         <menu>
             <item
                 android:id="@+id/nav_share"

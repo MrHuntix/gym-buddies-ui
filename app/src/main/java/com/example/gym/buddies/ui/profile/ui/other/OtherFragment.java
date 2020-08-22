@@ -26,7 +26,7 @@ public class OtherFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         otherViewModel =
                 ViewModelProviders.of(this).get(OtherViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_chat, container, false);
+        View root = inflater.inflate(R.layout.fragment_share, container, false);
         return root;
     }
 }

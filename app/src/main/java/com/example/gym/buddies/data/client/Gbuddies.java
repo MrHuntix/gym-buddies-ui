@@ -50,8 +50,8 @@ public interface Gbuddies {
     @PUT("/match/like/{matchLookupId}/by/{userId}/")
     Call<MatchLookupProto.MatchResponse> like(@Path("matchLookupId") int matchLookupId, @Path("userId") int userId);
 
-    @PUT("/match/dislike/{matchId}/")
-    Call<MatchLookupProto.MatchResponse> unmatch(@Path("matchId") int matchId);
+    @PUT("/match/reject/{matchRequestId}/")
+    Call<MatchLookupProto.MatchResponse> reject(@Path("matchRequestId") int matchRequestId);
 
     @GET("/match/all/{requesterId}/gym/{gymId}/branch/{branchId}/")
     Call<MatchLookupProto.LookupResponse> getSuitableMatches(@Path("requesterId") int requesterId, @Path("gymId") int gymId, @Path("branchId") int branchId);
@@ -59,6 +59,12 @@ public interface Gbuddies {
     @GET("/match/derive/{requesterId}/")
     Call<MatchLookupProto.LookupResponse> deriveMatches(@Path("requesterId") int requesterId);
 
-    @GET("/match/matched/{requesterId}/")
-    Call<MatchLookupProto.ChatResponse> getMatched(@Path("requesterId") int requesterId);
+    @GET("/match/friends/{userId}/")
+    Call<MatchLookupProto.FriendResponse> getFriends(@Path("userId") int userId);
+
+    @GET("/match/requests/{requesterId}/")
+    Call<MatchLookupProto.FriendRequestsResponse> getFriendRequests(@Path("requesterId") int requesterId);
+
+    @PUT("/match/accept/{matchRequestId}/")
+    Call<MatchLookupProto.MatchResponse> acceptFriendRequest(@Path("matchRequestId") int matchRequestId);
 }

@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.gym.buddies.R;
 import com.example.gym.buddies.data.client.ApiFactory;
 import com.example.gym.buddies.data.client.Gbuddies;
-import com.example.gym.buddies.data.model.operation.GymResponse;
 import com.example.gym.buddies.data.protos.GymProto;
 import com.example.gym.buddies.ui.profile.ui.gyms.adapters.GymAdapter;
 import com.facebook.shimmer.ShimmerFrameLayout;
@@ -30,7 +29,7 @@ public class GymsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_gyms, container, false);
-        shimmerFrameLayout = root.findViewById(R.id.shimmer_view_container);
+        shimmerFrameLayout = root.findViewById(R.id.shimmer_gym_container);
         RecyclerView recyclerView = root.findViewById(R.id.gyms_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         recyclerView.setHasFixedSize(true);

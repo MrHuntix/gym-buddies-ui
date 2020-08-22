@@ -33,6 +33,8 @@
     <string name="menu_gyms">Gyms</string>
     <string name="menu_matches">Matches</string>
     <string name="menu_chats">Chats</string>
+    <string name="menu_requests">Requests</string>
+    <string name="menu_friends">Friends</string>
     <string name="menu_share">Share</string>
     <string name="menu_request">Other</string>
 
@@ -46,7 +48,7 @@
     <string name="show_branch">show branch</string>
     <string name="hide_branch">hide branch</string>
     <string name="show_on_map">show on map</string>
-    <string name="message">send message</string>
+    <string name="message">chat</string>
     <string name="view_profile">view profile</string>
     <string name="title_activity_maps">Map</string>
     <string name="view_username">Username</string>
@@ -59,4 +61,12 @@
     <string name="upload_click">upload</string>
     <string name="todo">TODO</string>
     <string name="message_body">hi %s, we matched through the app. Let\'s talk and proceed with our workout routine.</string>
+    <string name="communicate">Communicate</string>
+    <string name="dp">dp</string>
+    <string name="accept">accept</string>
+    <string name="reject">reject</string>
+    <string name="supporting_text">supporting_text</string>
+    <string name="secondary_text">secondary_text</string>
+    <string name="title">title</string>
+    <string name="request_gym">%s, %s</string>
 </resources>
