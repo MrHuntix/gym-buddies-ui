@@ -1,4 +1,4 @@
-package com.example.gym.buddies.ui.profile.ui.chats.view;
+package com.example.gym.buddies.ui.profile.ui.friends.view;
 
 import android.view.View;
 import android.widget.Button;
@@ -12,15 +12,15 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ChatViewHolder extends ParentViewHolder {
+public class FriendViewHolder extends ParentViewHolder {
     private TextView gymDetails;
     private TextView userDetails;
     private Button messageButton;
 
-    public ChatViewHolder(View itemView) {
+    public FriendViewHolder(View itemView) {
         super(itemView);
-        this.gymDetails = itemView.findViewById(R.id.chat_gym_name);
-        this.userDetails = itemView.findViewById(R.id.chat_user_name);
-        this.messageButton = itemView.findViewById(R.id.chat_message);
+        this.gymDetails = itemView.findViewById(R.id.friend_gym_name);
+        this.userDetails = itemView.findViewById(R.id.friend_user_name);
+        this.messageButton = itemView.findViewById(R.id.friend_message);
     }
 }

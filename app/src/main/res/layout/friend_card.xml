@@ -10,7 +10,7 @@
     app:cardUseCompatPadding="true">
 
     <TextView
-        android:id="@+id/chat_gym_name"
+        android:id="@+id/friend_gym_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
@@ -22,7 +22,7 @@
         android:layout_marginStart="5dp" />
 
     <TextView
-        android:id="@+id/chat_user_name"
+        android:id="@+id/friend_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
@@ -33,7 +33,7 @@
         android:layout_marginStart="5dp" />
 
     <Button
-        android:id="@+id/chat_message"
+        android:id="@+id/friend_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
