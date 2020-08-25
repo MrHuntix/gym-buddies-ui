@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">GymBuddies</string>
     <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
+    <string name="prompt_username">enter user name</string>
+    <string name="prompt_password">enter password</string>
     <string name="action_sign_in">Login In</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">"Welcome !"</string>
@@ -51,6 +51,7 @@
     <string name="message">chat</string>
     <string name="view_profile">view profile</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_intro">Intro</string>
     <string name="view_username">Username</string>
     <string name="view_profile_title">SHOWING USER DETAILS</string>
     <string name="view_profile_like">LIKE</string>
@@ -69,4 +70,18 @@
     <string name="secondary_text">secondary_text</string>
     <string name="title">title</string>
     <string name="request_gym">%s, %s</string>
+    <string name="intro_tick">intro_tick</string>
+    <string name="transform">TRANSFORM</string>
+    <string name="your_life">Your life</string>
+    <string name="your_life_sub">Meet new people who are as driven as you are</string>
+    <string name="create">CREATE</string>
+    <string name="your_connections">Your connections</string>
+    <string name="your_connections_sub">Meet new people who achieve their goals and start a routine with them</string>
+    <string name="partner">PARTNER</string>
+    <string name="your_partner">Your fitness goals</string>
+    <string name="your_partner_sub">Find the best partner near you to achieve your goals</string>
+    <string name="prev">Previous</string>
+    <string name="next">Next</string>
+    <string name="left">left</string>
+
 </resources>
