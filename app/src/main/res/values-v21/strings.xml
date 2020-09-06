@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="intro_tick">intro_tick</string>
+    <string name="upload">upload</string>
+    <string name="loginT">Login</string>
+    <string name="signup">SIGNUP</string>
+    <string name="create_account">Create Account</string>
 </resources>

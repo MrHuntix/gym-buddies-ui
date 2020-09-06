@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tempbgrnd">
+
+    <RelativeLayout
+        android:id="@+id/t11"
+        android:layout_width="match_parent"
+        android:layout_height="367.73dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.531">
+
+        <ImageView
+            android:id="@+id/partnerImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/intro_tick"
+            android:padding="15dp"
+            app:srcCompat="@drawable/intro_tick" />
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="@color/all_text_color"
+            android:textColorHighlight="@color/all_text_color"
+            android:textColorHint="@color/all_text_color"
+            android:textSize="45sp" />
+
+        <TextView
+            android:id="@+id/subHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="180dp"
+            android:layout_marginBottom="260dp"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="@color/all_text_color"
+            android:textColorHighlight="@color/all_text_color"
+            android:textColorHint="@color/all_text_color"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/footer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="260dp"
+            android:layout_marginBottom="231dp"
+            android:gravity="center|start|center_horizontal|center_vertical"
+            android:padding="15dp"
+            android:textColor="@color/all_text_color"
+            android:textColorHighlight="@color/all_text_color"
+            android:textColorHint="@color/all_text_color"
+            android:textSize="15sp" />
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/prev"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="320dp"-->
+        <!--            android:layout_marginLeft="80dp"-->
+        <!--            android:contentDescription="@string/left"-->
+        <!--            app:srcCompat="?attr/actionModeCloseDrawable"/>-->
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/next"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginLeft="300dp"-->
+        <!--            android:layout_marginTop="320dp"-->
+        <!--            android:contentDescription="@string/left"-->
+        <!--            android:rotation="180"-->
+        <!--            app:srcCompat="?attr/actionModeCloseDrawable" />-->
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/left"
+        android:rotation="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.809"
+        app:layout_constraintStart_toEndOf="@+id/prev"
+        app:layout_constraintTop_toBottomOf="@+id/t11"
+        app:layout_constraintVertical_bias="0.181"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <ImageView
+        android:id="@+id/prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:contentDescription="@string/left"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t11"
+        app:layout_constraintVertical_bias="0.181"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+</androidx.constraintlayout.widget.ConstraintLayout>

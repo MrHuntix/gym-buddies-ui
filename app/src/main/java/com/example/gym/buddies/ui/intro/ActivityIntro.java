@@ -19,22 +19,28 @@ import java.util.Arrays;
 
 public class ActivityIntro extends AppCompatActivity {
 
-    private RecyclerView introView;
-    private Button prev;
-    private Button next;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
-        introView = findViewById(R.id.intro_view);
+        RecyclerView introView = findViewById(R.id.intro_view);
         if (SessionManager.getLoggedStatus(getApplicationContext())) {
             SessionManager.logInfo(getApplicationContext());
             Intent i = IntentUtil.getIntentForGymBuddies(this.getApplicationContext(), ProfileActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
         } else {
-            LinearLayoutManager layoutManager = new LinearLayoutManager(getBaseContext(), LinearLayoutManager.HORIZONTAL, false);
+            LinearLayoutManager layoutManager = new LinearLayoutManager(getBaseContext(), LinearLayoutManager.HORIZONTAL, false) {
+                @Override
+                public boolean canScrollHorizontally() {
+                    return false;
+                }
+
+                @Override
+                public boolean canScrollVertically() {
+                    return false;
+                }
+            };
             layoutManager.setSmoothScrollbarEnabled(false);
             introView.setLayoutManager(layoutManager);
             introView.setHasFixedSize(true);

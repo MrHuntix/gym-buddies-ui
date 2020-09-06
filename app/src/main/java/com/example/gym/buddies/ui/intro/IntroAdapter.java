@@ -39,7 +39,7 @@ public class IntroAdapter extends RecyclerView.Adapter<IntroViewHolder> {
     public IntroViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = null;
         try {
-             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.intro_template, parent, false);
+             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.intro_template_test, parent, false);
         } catch (Exception e) {
             e.printStackTrace();
         }

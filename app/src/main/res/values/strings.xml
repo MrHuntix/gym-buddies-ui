@@ -13,13 +13,13 @@
     <string name="sign_in_failed">Sign in failed</string>
     <string name="sign_in">SIGN IN</string>
     <string name="login">LOGIN</string>
-    <string name="sign_up_link">new user, click here</string>
-    <string name="sign_up_title">ENTER DETAILS</string>
-    <string name="enter_username">enter username</string>
-    <string name="enter_email">enter email id</string>
-    <string name="enter_mobile_number">enter mobile number</string>
-    <string name="enter_password">enter password</string>
-    <string name="positive_button">SIGN UP</string>
+    <string name="sign_up_link">Already onboard?</string>
+    <string name="sign_up_title">LOGIN</string>
+    <string name="enter_username">username</string>
+    <string name="enter_email">email</string>
+    <string name="enter_mobile_number">contact</string>
+    <string name="enter_password">password</string>
+    <string name="positive_button">LOGIN</string>
     <string name="negative_button">CLOSE</string>
     <string name="title_activity_profile">ProfileActivity</string>
     <string name="title_activity_branch">BranchActivity</string>
@@ -57,7 +57,7 @@
     <string name="view_profile_like">LIKE</string>
     <string name="request_button_accept">ACCEPT</string>
     <string name="request_button_reject">REJECT</string>
-    <string name="enter_bio">enter bio</string>
+    <string name="enter_bio">bio</string>
     <string name="camera_click">camera</string>
     <string name="upload_click">upload</string>
     <string name="todo">TODO</string>
@@ -83,5 +83,9 @@
     <string name="prev">Previous</string>
     <string name="next">Next</string>
     <string name="left">left</string>
+    <string name="upload">upload</string>
+    <string name="loginT">Login</string>
+    <string name="signup">SIGNUP</string>
+    <string name="create_account">Create Account</string>
 
 </resources>

@@ -19,6 +19,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.gym.buddies.R;
 import com.example.gym.buddies.ui.intro.ActivityIntro;
+import com.example.gym.buddies.ui.login.LoginActivity;
 import com.example.gym.buddies.utils.IntentUtil;
 import com.example.gym.buddies.utils.SessionManager;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -76,7 +77,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void logout() {
         SessionManager.setLoggedIn(getApplicationContext(), false, SessionManager.getLoginResponseForLogout());
-        Intent intent = IntentUtil.getIntentForGymBuddies(getApplicationContext(), ActivityIntro.class);
+        Intent intent = IntentUtil.getIntentForGymBuddies(getApplicationContext(), LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
