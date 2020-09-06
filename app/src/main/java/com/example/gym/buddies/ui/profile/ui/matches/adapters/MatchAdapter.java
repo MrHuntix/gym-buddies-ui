@@ -64,11 +64,11 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchViewHolder> {
                 .setOnClickListener(v -> showOnMap(matchLookup.getGym().getBranch().getBranchId(), matchLookup.getGym().getBranch().getLatitude(), matchLookup.getGym().getBranch().getLongitude()));
         matchViewHolder.getShowProfile().setOnClickListener(v -> {
             Log.d("logTag", "showing profile of user id " + matchLookup.getUser().getUserId());
-            createDialoge(matchLookup.getUser(), matchLookup).show();
+            createDialoge(matchLookup.getUser(), matchLookup, i).show();
         });
     }
 
-    private AlertDialog createDialoge(MatchLookupProto.User user, MatchLookupProto.MatchLookup matchLookup) {
+    private AlertDialog createDialoge(MatchLookupProto.User user, MatchLookupProto.MatchLookup matchLookup, int position) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle(R.string.view_profile_title);
         LayoutInflater inflater = LayoutInflater.from(context);
@@ -95,6 +95,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchViewHolder> {
                     t.printStackTrace();
                 }
             });
+            notifyItemRemoved(position);
         });
 
         builder.setNegativeButton(R.string.negative_button, (dialog, id) -> {

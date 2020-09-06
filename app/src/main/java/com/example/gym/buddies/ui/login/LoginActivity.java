@@ -68,10 +68,13 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void updateUiWithUser(LoginSignupProto.LoginResponse response) {
-        SessionManager.setLoggedIn(getApplicationContext(), true, response);
-        Intent i = IntentUtil.getIntentForGymBuddies(this.getApplicationContext(), ProfileActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(i);
+        Toast.makeText(getApplicationContext(), response.getResponseMessage(), Toast.LENGTH_LONG).show();
+        if(response.getResponseCode() != 400) {
+            SessionManager.setLoggedIn(getApplicationContext(), true, response);
+            Intent i = IntentUtil.getIntentForGymBuddies(this.getApplicationContext(), ProfileActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+        }
     }
 
     private void showLoginFailed(String errorString) {

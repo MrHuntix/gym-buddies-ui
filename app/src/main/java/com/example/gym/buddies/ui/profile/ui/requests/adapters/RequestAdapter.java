@@ -48,7 +48,6 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestViewHolder> {
         holder.getUserName().setText(request.getUser().getUserName());
         holder.getUserImage().setImageBitmap(BitmapFactory.decodeByteArray(request.getUser().getUserImage().toByteArray(), 0, request.getUser().getUserImage().toByteArray().length));
         holder.getUserAbout().setText(request.getUser().getUserName());
-//        holder.getGymDetails().setText(String.format(context.getString(R.string.request_gym), request.getGym().getGymName(), request.getGym().getBranch().getLocality()));
         holder.getGymDetails().setText(context.getString(R.string.request_gym, request.getGym().getGymName(), request.getGym().getBranch().getLocality()));
         holder.getUserAbout().setText(request.getUser().getAbout());
         holder.getAcceptRequest().setOnClickListener(v -> {
@@ -70,11 +69,13 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestViewHolder> {
                     t.printStackTrace();
                 }
             });
+            notifyItemRemoved(position);
         });
         holder.getRejectRequest().setOnClickListener(v -> {
             Log.d("logTag", "rejecting friend request");
             Gbuddies gbuddies = ApiFactory.gbuddies.create(Gbuddies.class);
             Call<MatchLookupProto.MatchResponse> response = gbuddies.reject(request.getMatchRequestId());
+
             response.enqueue(new Callback<MatchLookupProto.MatchResponse>() {
                 @Override
                 public void onResponse(Call<MatchLookupProto.MatchResponse> call, Response<MatchLookupProto.MatchResponse> response) {
@@ -90,12 +91,15 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestViewHolder> {
                     t.printStackTrace();
                 }
             });
+            notifyItemRemoved(position);
         });
-
     }
 
     @Override
     public int getItemCount() {
         return CollectionUtils.isEmpty(requests)?0:requests.size();
     }
+
+
+
 }
