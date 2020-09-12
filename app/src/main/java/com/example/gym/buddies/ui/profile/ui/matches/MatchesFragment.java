@@ -61,7 +61,7 @@ public class MatchesFragment extends Fragment {
             @Override
             public void onResponse(Call<MatchLookupProto.LookupResponse> call, Response<MatchLookupProto.LookupResponse> response) {
                 if(response!=null && response.isSuccessful() && response.body()!=null) {
-                    List<MatchLookupProto.MatchLookup> derivedMatches = response.body().getLookupsList();
+                    List<MatchLookupProto.MatchLookup> derivedMatches = new ArrayList<>(response.body().getLookupsList());
                     if (!CollectionUtils.isEmpty(derivedMatches)) {
                         Log.d("logTag", "derived " + derivedMatches.size() + " for userId: " + userId);
                         shimmerFrameLayout.stopShimmer();

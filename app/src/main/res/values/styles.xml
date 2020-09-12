@@ -1,7 +1,7 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -17,4 +17,12 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="ShapeAppearanceOverlay.MyApp.Button.Rounded" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="android:radius">30dp</item>
+        <item name="cornerFamilyTopRight">cut</item>
+        <item name="cornerFamilyBottomRight">cut</item>
+        <item name="cornerSizeTopLeft">32dp</item>
+        <item name="cornerSizeBottomLeft">32dp</item>
+    </style>
 </resources>

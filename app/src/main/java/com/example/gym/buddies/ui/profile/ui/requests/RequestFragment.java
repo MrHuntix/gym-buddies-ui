@@ -18,6 +18,7 @@ import com.example.gym.buddies.ui.profile.ui.requests.adapters.RequestAdapter;
 import com.example.gym.buddies.utils.SessionManager;
 import com.facebook.shimmer.ShimmerFrameLayout;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -48,7 +49,7 @@ public class RequestFragment extends Fragment {
             @Override
             public void onResponse(Call<MatchLookupProto.FriendRequestsResponse> call, Response<MatchLookupProto.FriendRequestsResponse> response) {
                 if(response!=null && response.isSuccessful() && response.body()!=null) {
-                    List<MatchLookupProto.FriendRequest> requests = response.body().getFriendRequestsList();
+                    List<MatchLookupProto.FriendRequest> requests = new ArrayList<>(response.body().getFriendRequestsList());
                     shimmerFrameLayout.stopShimmer();
                     recyclerView.setVisibility(View.VISIBLE);
                     recyclerView.setAdapter(new RequestAdapter(requests, getContext()));
