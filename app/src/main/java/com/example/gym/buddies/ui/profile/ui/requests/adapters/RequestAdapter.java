@@ -69,6 +69,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestViewHolder> {
                     t.printStackTrace();
                 }
             });
+            this.requests.remove(position);
             notifyItemRemoved(position);
         });
         holder.getRejectRequest().setOnClickListener(v -> {
@@ -91,6 +92,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestViewHolder> {
                     t.printStackTrace();
                 }
             });
+            this.requests.remove(position);
             notifyItemRemoved(position);
         });
     }

@@ -95,6 +95,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchViewHolder> {
                     t.printStackTrace();
                 }
             });
+            this.derivedMatches.remove(position);
             notifyItemRemoved(position);
         });
 
